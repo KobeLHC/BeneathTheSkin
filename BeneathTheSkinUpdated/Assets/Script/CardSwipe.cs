@@ -18,6 +18,14 @@ public class CardSwipe : MonoBehaviour
     public GameObject cardSwipeTryAgain;
     public GameObject square;
 
+    //Door control
+    private GameObject door;
+
+    private void Start()
+    {
+        door = GameObject.FindGameObjectWithTag("door");
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Start Swipe
@@ -67,6 +75,11 @@ public class CardSwipe : MonoBehaviour
                 square.SetActive(false);
                 bgTint.SetActive(false);
                 cardSwipe.SetActive(false);
+
+                if (door != null)
+                {
+                    Destroy(door);
+                }
             }
         }
     }
