@@ -5,14 +5,12 @@ using UnityEngine;
 public class CardSwipePopUp : MonoBehaviour
 {
     public PlayerController other;
-    public GameObject bgTint;
     public GameObject cardSwipe;
     public bool playerIsClose;
 
     // Start is called before the first frame update
     void Start()
     {
-        bgTint.SetActive(false);
         cardSwipe.SetActive(false);
     }
 
@@ -21,7 +19,6 @@ public class CardSwipePopUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && other.GetAnimator().GetBool("changeSci") == true)
         {
-            bgTint.SetActive(true);
             cardSwipe.SetActive(true);
         }
     }

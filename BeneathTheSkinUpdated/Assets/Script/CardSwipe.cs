@@ -12,7 +12,6 @@ public class CardSwipe : MonoBehaviour
     public float minSpeed = 3f; // Adjust these based on testing
     public float maxSpeed = 6f;
 
-    public GameObject bgTint;
     public GameObject cardSwipe;
     public GameObject cardSwipeTop;
     public GameObject cardSwipeTryAgain;
@@ -73,7 +72,6 @@ public class CardSwipe : MonoBehaviour
                 cardSwipeTop.SetActive(true);
                 cardSwipeTryAgain.SetActive(false);
                 square.SetActive(false);
-                bgTint.SetActive(false);
                 cardSwipe.SetActive(false);
 
                 if (door != null)
