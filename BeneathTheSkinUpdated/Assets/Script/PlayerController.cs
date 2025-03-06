@@ -22,12 +22,16 @@ public class PlayerController : MonoBehaviour
     //Security sprite
     public Sprite newSprite2;
 
+    //Scientist 2 sprite
+    public Sprite newSprite3;
+
     //Player basic sprite
     public Sprite basicSprite;
 
     //which shape to change
     private bool sciOn;
     private bool secOn;
+    private bool sci2On;
 
     //Animation
     private Animator anim;
@@ -43,6 +47,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         sciOn = false;
         secOn = false;
+        sci2On = false;
     }
 
     void Update()
@@ -62,6 +67,11 @@ public class PlayerController : MonoBehaviour
             else if(secOn == true)
             {
                 ChangePlayerSec();
+            }
+
+            else if(sci2On == true)
+            {
+                ChangePlayerSci2();
             }
 
             else
@@ -93,6 +103,7 @@ public class PlayerController : MonoBehaviour
         susLevel -= value;
     }
 
+    //player change into scientist
     public void ChangePlayerSci()
     {
         if (anim.GetBool("changeSci") == false)
@@ -100,6 +111,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = newSprite;
             anim.SetBool("changeSci", true);
             anim.SetBool("changeSec", false);
+            anim.SetBool("changeSci2", false);
             Debug.Log("changeSci true");
         }
 
@@ -111,13 +123,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //player change into security
     public void ChangePlayerSec()
     {
         if (anim.GetBool("changeSec") == false)
         {
             spriteRenderer.sprite = newSprite2;
             anim.SetBool("changeSec", true);
-             anim.SetBool("changeSci", false);
+            anim.SetBool("changeSci", false);
+            anim.SetBool("changeSci2", false);
             Debug.Log("changeSec true");
         }
 
@@ -125,7 +139,27 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.sprite = basicSprite;
             anim.SetBool("changeSec", false);
-            Debug.Log("changeS false");
+            Debug.Log("changeSec false");
+        }
+    }
+
+    //player change into scientist 2
+    public void ChangePlayerSci2()
+    {
+        if (anim.GetBool("changeSci2") == false)
+        {
+            spriteRenderer.sprite = newSprite3;
+            anim.SetBool("changeSci2", true);
+            anim.SetBool("changeSci", false);
+            anim.SetBool("changeSec", false);
+            Debug.Log("changeSci2 true");
+        }
+
+        else
+        {
+            spriteRenderer.sprite = basicSprite;
+            anim.SetBool("changeSci2", false);
+            Debug.Log("changeSci2 false");
         }
     }
 
@@ -136,11 +170,19 @@ public class PlayerController : MonoBehaviour
         {
             sciOn = true;
             secOn = false;
+            sci2On = false;
         }
         else if (other.gameObject.tag == "Sec")
         {
             secOn = true;
             sciOn = false;
+            sci2On = false;
+        }
+        else if(other.gameObject.tag == "Sci2")
+        {
+            sci2On = true;
+            sciOn = false;
+            secOn = false;
         }
     }
 
