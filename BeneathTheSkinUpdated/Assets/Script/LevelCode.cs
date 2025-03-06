@@ -9,6 +9,7 @@ public class LevelCode : MonoBehaviour
     public int winProgress = 0;
     public GameObject chemicalScene;
     public GameObject destroyObjectChem;
+    public PlayerController other;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,8 @@ public class LevelCode : MonoBehaviour
         if (winProgress >= winThreshold)
         {
             chemicalScene.SetActive(false);
-            Time.timeScale = 1;
+            other.changeRunSpeed(6.0f);
+            //Time.timeScale = 1;
             Destroy(destroyObjectChem);
         }
     }

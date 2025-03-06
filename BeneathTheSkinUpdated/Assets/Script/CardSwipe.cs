@@ -2,28 +2,23 @@ using UnityEngine;
 
 public class CardSwipe : MonoBehaviour
 {
+    public PlayerController other;
+
     private Vector2 startPos;
     private float swipeStartTime;
     private bool isSwiping = false;
-    
+
     public Transform swipeStart;
     public Transform swipeEnd;
-    
-    public float minSpeed = 3f; // Adjust these based on testing
-    public float maxSpeed = 6f;
 
+    public float minSpeed = 6.0f; // Adjust these based on testing
+    public float maxSpeed = 10.0f;
+
+    public GameObject bgTint;
     public GameObject cardSwipe;
     public GameObject cardSwipeTop;
     public GameObject cardSwipeTryAgain;
     public GameObject square;
-
-    //Door control
-    private GameObject door;
-
-    private void Start()
-    {
-        door = GameObject.FindGameObjectWithTag("door");
-    }
 
     private void Update()
     {
@@ -54,30 +49,27 @@ public class CardSwipe : MonoBehaviour
 
             if (swipeSpeed < minSpeed)
             {
-                Debug.Log("Too Slow! Try Again.");
+                Debug.Log("Too Slow! Try Again. " + swipeSpeed);
                 cardSwipeTryAgain.SetActive(true);
                 cardSwipeTop.SetActive(false);
                 ResetCard();
             }
             else if (swipeSpeed > maxSpeed)
             {
-                Debug.Log("Too Fast! Try Again.");
+                Debug.Log("Too Fast! Try Again. " + swipeSpeed);
                 cardSwipeTryAgain.SetActive(true);
                 cardSwipeTop.SetActive(false);
                 ResetCard();
             }
             else
             {
-                Debug.Log("Swipe Successful!");
+                Debug.Log("Swipe Successful! " + swipeSpeed);
                 cardSwipeTop.SetActive(true);
                 cardSwipeTryAgain.SetActive(false);
                 square.SetActive(false);
+                bgTint.SetActive(false);
                 cardSwipe.SetActive(false);
-
-                if (door != null)
-                {
-                    Destroy(door);
-                }
+                other.changeRunSpeed(6.0f);
             }
         }
     }

@@ -93,6 +93,11 @@ public class PlayerController : MonoBehaviour
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 
+    public void changeRunSpeed(float speed)
+    {
+        runSpeed = speed;
+    }
+
     public void moreSus(int value)
     {
         susLevel += value;

@@ -1,21 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Array2DEditor;
 
 public class PopUpTextB : MonoBehaviour
 {
+    // Reference to player class
+    public PlayerController other;
+
     // Panel and Text game objects
     public GameObject TextPanel;
     public TMP_Text displayText;
 
     // Holds all the text for an NPC
-    public string[] dialogue;
-    public string[] options;
+    public Array2DString textLines;
+
+    // Holds all the sus Values for an NPC's dialogue options
+    public Array2DInt susValues;
 
     // Used to iterate through the above arrays
-    private int index;
-    private int nextTextLine = 1;
+    public int index;
+
+    public int sus;
 
     // Button variables
     public GameObject ButtonA;
@@ -25,29 +33,23 @@ public class PopUpTextB : MonoBehaviour
     public GameObject ButtonC;
     public TMP_Text ButtonCText;
 
-    public bool isTriggered = false;
     public float wordSpeed = 0.05f;
     public bool playerIsClose;
-    public bool isBranching;
-    // The variable below exists only to change the isBranching boolean. This is because the Coroutine/IEnumerator doesn't like bool for some reason.
-    public int changeIsBranching = 0; // 0 is false, 1 is true, 2 is to end dialogue
+    public int textOptions;
+    public int textLinesNum = 0;
+    public bool textIsDone;
+
+    public bool isTriggered = false;
+
 
     // Update is called once per frame
     void Update()
     {
-        // Checks whether isBranching should be true or false
-        if (changeIsBranching == 1)
-        {
-            isBranching = true;
-        }
-        else
-        {
-            isBranching = false;
-        }
 
         // Checls if the player interacted with NPC (checks for player input and if close enough)
         if (playerIsClose && !isTriggered)
         {
+            other.changeRunSpeed(0.0f);
             ButtonA.SetActive(false);
             ButtonB.SetActive(false);
             ButtonC.SetActive(false);
@@ -65,26 +67,35 @@ public class PopUpTextB : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
-
-        // Checks if message is complete
-        if (displayText.text == dialogue[index].Substring(1))
+        
+        if (index < textLinesNum)
         {
-            // Checks if current message is branching
-            if (!isBranching)
+            // Checks if message is complete
+            if (displayText.text.Length == textLines.GetCell(0, index).Substring(1).Length)
             {
-                // If not branching, only displays one button with the corresponding button text.
-                ButtonAText.text = options[0];
-                ButtonA.SetActive(true);
-            }
-            else
-            {
-                // If branching, displays multiple buttons with the corresponding button texts.
-                ButtonAText.text = options[index + 1];
-                ButtonA.SetActive(true);
-                ButtonBText.text = options[index + 2];
-                ButtonB.SetActive(true);
-                ButtonCText.text = options[index + 3];
-                ButtonC.SetActive(true);
+
+                if (textOptions == 1)
+                {
+                    ButtonAText.text = textLines.GetCell(1, index).Substring(textLines.GetCell(1, index).IndexOf('|') + 1);
+                    ButtonA.SetActive(true);
+                }
+                else if (textOptions == 2)
+                {
+                    ButtonAText.text = textLines.GetCell(1, index).Substring(textLines.GetCell(1, index).IndexOf('|') + 1);
+                    ButtonA.SetActive(true);
+                    ButtonBText.text = textLines.GetCell(2, index).Substring(textLines.GetCell(2, index).IndexOf('|') + 1);
+                    ButtonB.SetActive(true);
+                }
+                else if (textOptions == 3)
+                {
+                    ButtonAText.text = textLines.GetCell(1, index).Substring(textLines.GetCell(1, index).IndexOf('|') + 1);
+                    ButtonA.SetActive(true);
+                    ButtonBText.text = textLines.GetCell(2, index).Substring(textLines.GetCell(2, index).IndexOf('|') + 1);
+                    ButtonB.SetActive(true);
+                    ButtonCText.text = textLines.GetCell(3, index).Substring(textLines.GetCell(3, index).IndexOf('|') + 1);
+                    ButtonC.SetActive(true);
+                }
+
             }
         }
     }
@@ -96,84 +107,96 @@ public class PopUpTextB : MonoBehaviour
         index = 0;
         TextPanel.SetActive(false);
         //displayText.enabled = false;
+        other.changeRunSpeed(6.0f);
     }
 
     // Below is how each letter is typed one at a time. Is also how the code checks whether the text should be branching or not.
     IEnumerator Typing()
     {
-        foreach (char letter in dialogue[index].ToCharArray())
+        for (int i = 0; i < textLines.GetCell(0, index).Length; i++)
         {
-            if (changeIsBranching == 3)
+            if (textLines.GetCell(0, index)[i] == '@')
             {
-                break;
+                textOptions = 1;
             }
-            if (letter == '*')
+            else if (textLines.GetCell(0, index)[i] == '#')
             {
-                isBranching = true;
-                changeIsBranching = 1;
+                textOptions = 2;
             }
-            else if (letter == '#')
+            else if (textLines.GetCell(0, index)[i] == '^')
             {
-                changeIsBranching = 0;
-            }
-            else if (letter == '%')
-            {
-                changeIsBranching = 2;
+                textOptions = 3;
             }
             else
             {
-                displayText.text += letter;
+                displayText.text += textLines.GetCell(0, index)[i];
                 yield return new WaitForSeconds(wordSpeed);
+
+                //fail letter replacement system, might revisit if we need to add more to game
+                /*
+                if (textLines.GetCell(0, index)[i].Equals(" ") || textLines.GetCell(0, index)[i - 1].Equals(" "))
+                {
+                    displayText.text += textLines.GetCell(0, index)[i];
+                    yield return new WaitForSeconds(wordSpeed);
+                }
+                else
+                {
+                    randNum = UnityEngine.Random.Range(0, randMax);
+
+                    if (randNum == 1)
+                    {
+                        randMax = 8;
+                        displayText.text += '*';
+                        yield return new WaitForSeconds(wordSpeed);
+                    }
+                    else
+                    {
+                        randMax--;
+                        displayText.text += textLines.GetCell(0, index)[i];
+                        yield return new WaitForSeconds(wordSpeed);
+                    }
+                }
+                */
             }
         }
     }
 
-    // Name is slightly confusing, the following 2 methods are used to go to the next line of dialogue.
-    // This one is for non-branching dialogue.
-    public void NextLine()
+    // Name is slightly confusing, the following methods are used to go to the next line of dialogue.
+    public void NextLineA()
     {
         ButtonA.SetActive(false);
         ButtonB.SetActive(false);
         ButtonC.SetActive(false);
+        sus = susValues.GetCell(0, index);
+        other.moreSus(sus);
+        index = Convert.ToInt32(textLines.GetCell(1, index).Substring(0, textLines.GetCell(1, index).IndexOf('|')));
 
-        if (changeIsBranching == 2)
-        {
-            //index = dialogue.Length;
-            changeIsBranching = 3;
-            zeroText();
-        }
 
-        if (index < dialogue.Length - 1 && !isBranching)
+
+        if (index < textLinesNum)
         {
-            index += nextTextLine;
+
             displayText.text = "";
             StartCoroutine(Typing());
-            nextTextLine = 1;
-        }
-        else if (index < dialogue.Length - 1 && isBranching)
-        {
-            index += nextTextLine;
-            displayText.text = "";
-            StartCoroutine(Typing());
-            nextTextLine = 3;
         }
         else
         {
             zeroText();
         }
-        isBranching = false;
     }
-
-    // This one is for branching dialogue.
     public void NextLineB()
     {
         ButtonA.SetActive(false);
         ButtonB.SetActive(false);
         ButtonC.SetActive(false);
+        sus = susValues.GetCell(1, index);
+        other.moreSus(sus);
+        index = Convert.ToInt32(textLines.GetCell(2, index).Substring(0, textLines.GetCell(2, index).IndexOf('|')));
 
-        if (index < dialogue.Length - 1)
+
+        if (index < textLinesNum)
         {
-            index += 2;
+
             displayText.text = "";
             StartCoroutine(Typing());
         }
@@ -181,19 +204,19 @@ public class PopUpTextB : MonoBehaviour
         {
             zeroText();
         }
-        isBranching = false;
     }
-
-    // This one is for branching dialogue.
     public void NextLineC()
     {
         ButtonA.SetActive(false);
         ButtonB.SetActive(false);
         ButtonC.SetActive(false);
+        sus = susValues.GetCell(2, index);
+        other.moreSus(sus);
+        index = Convert.ToInt32(textLines.GetCell(3, index).Substring(0, textLines.GetCell(3, index).IndexOf('|')));
 
-        if (index < dialogue.Length - 1)
+        if (index < textLinesNum)
         {
-            index += 3;
+
             displayText.text = "";
             StartCoroutine(Typing());
         }
@@ -201,7 +224,7 @@ public class PopUpTextB : MonoBehaviour
         {
             zeroText();
         }
-        isBranching = false;
+
     }
 
     // Checks if player is close enough to interact with NPC

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChemicalMixPopUp : MonoBehaviour
 {
     // later add player sprite conditon
-    //public PlayerController other;
+    public PlayerController other;
 
     //In use
     public GameObject chemicalScene;
@@ -22,8 +22,14 @@ public class ChemicalMixPopUp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null/*&& other.GetAnimator().GetBool("___") == true*/)
         {
             chemicalScene.SetActive(true);
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
+
+        if (chemicalScene.active)
+        {
+            other.changeRunSpeed(0.0f);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

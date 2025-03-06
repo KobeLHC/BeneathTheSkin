@@ -1181,12 +1181,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3057c3397d6a44c9961597b11378b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
   TextPanel: {fileID: 2080334063}
   displayText: {fileID: 105187262}
-  dialogue:
-  - '#Thanks! Yuor a lif3svaer!'
-  options:
-  - ...
+  textLines:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 64, y: 16}
+    cells:
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+  susValues:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 32, y: 16}
+    cells:
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+  index: 0
+  sus: 0
   ButtonA: {fileID: 156307733}
   ButtonAText: {fileID: 1743748376}
   ButtonB: {fileID: 889882957}
@@ -1195,8 +1226,9 @@ MonoBehaviour:
   ButtonCText: {fileID: 189870985}
   wordSpeed: 0.05
   playerIsClose: 0
-  isBranching: 0
-  changeIsBranching: 0
+  textOptions: 0
+  textLinesNum: 0
+  textIsDone: 0
 --- !u!61 &156566855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1501,7 +1533,7 @@ GameObject:
   - component: {fileID: 195476516}
   - component: {fileID: 195476515}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: Security Room Text On Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1519,32 +1551,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3668b6a963515d345940c1a7be562f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  other: {fileID: 0}
   TextPanel: {fileID: 2080334063}
   displayText: {fileID: 105187262}
-  dialogue:
-  - "*Sorry bud, security room is off-limits!.............Unless you can tell me
-    where they\u2019re hiding the food for tomorrow."
-  - "%Come onnn, I gotta nab something before Linda takes it all again. 5 minutes
-    out and it\u2019s always half-gone!"
-  - "%Wow, feeling very poetic today are we? Sorry, whatever mediaeval spell you\u2019re
-    trying to cast isn\u2019t gonna change my mind."
-  - '%Hah, I knew it! Thanks man, just don''t mess with anything alright?'
-  options:
-  - N0.
-  - You dare approach me? My vacuum will thrum your lards until you avenge me to
-    hydrate! Now liquify thine fatal sustenance. It is the last time you will.
-  - F1ling cbaneit
+  textLines:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 64, y: 16}
+    cells:
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+  susValues:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 32, y: 16}
+    cells:
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+  index: 0
+  sus: 0
   ButtonA: {fileID: 1378811529}
   ButtonAText: {fileID: 1332342850}
   ButtonB: {fileID: 1256210659}
   ButtonBText: {fileID: 2057062730}
   ButtonC: {fileID: 414126864}
   ButtonCText: {fileID: 1983157548}
-  isTriggered: 0
   wordSpeed: 0.05
   playerIsClose: 0
-  isBranching: 0
-  changeIsBranching: 0
+  textOptions: 0
+  textLinesNum: 0
+  textIsDone: 0
+  isTriggered: 0
 --- !u!61 &195476516
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1700,7 +1755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284708648}
   - component: {fileID: 284708649}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Green (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1917,7 +1972,7 @@ GameObject:
   - component: {fileID: 302555947}
   - component: {fileID: 302555946}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Breakroom Text On Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1935,32 +1990,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3668b6a963515d345940c1a7be562f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  other: {fileID: 0}
   TextPanel: {fileID: 2080334063}
   displayText: {fileID: 105187262}
-  dialogue:
-  - "*Hey, where are you going? Your shift isn\u2019t over yet!"
-  - "% \u2026what? You\u2019re not acting like yourself today."
-  - "#Home?! I\u2019m surprised you don\u2019t already consider this home with how
-    long you\u2019ve been down there."
-  - "%I can\u2019t believe I\u2019m the one saying this, but this is the one night
-    you should be doing your job. Do NOT leave me here alone with that thing!"
-  options:
-  - 
-  - Oh the furnace was a ocean. And the jelly was a chemical....Lament the shadow..Oooh
-  - Hom3...
-  - ...
-  - ...
+  textLines:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 64, y: 16}
+    cells:
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+  susValues:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 32, y: 16}
+    cells:
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+  index: 0
+  sus: 0
   ButtonA: {fileID: 1378811529}
   ButtonAText: {fileID: 1332342850}
   ButtonB: {fileID: 1256210659}
   ButtonBText: {fileID: 2057062730}
   ButtonC: {fileID: 414126864}
   ButtonCText: {fileID: 1983157548}
-  isTriggered: 0
   wordSpeed: 0.05
   playerIsClose: 0
-  isBranching: 0
-  changeIsBranching: 0
+  textOptions: 0
+  textLinesNum: 0
+  textIsDone: 0
+  isTriggered: 0
 --- !u!61 &302555947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2445,7 +2523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346006301}
   - component: {fileID: 346006300}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2468,6 +2546,7 @@ MonoBehaviour:
   winProgress: 0
   chemicalScene: {fileID: 1137618091}
   destroyObjectChem: {fileID: 456186798}
+  other: {fileID: 2039526035}
 --- !u!4 &346006301
 Transform:
   m_ObjectHideFlags: 0
@@ -2476,12 +2555,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346006299}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.711719, y: -1.826309, z: -9.99985}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0790291, y: 0.013420939, z: 0.00014972687}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1137618092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357911170
 GameObject:
@@ -3313,6 +3392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335ea740b32d0471fb50ae86afedeba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
   chemicalScene: {fileID: 1137618091}
   playerIsClose: 0
 --- !u!114 &456186805
@@ -4122,7 +4202,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.536921, y: -1.8397299, z: -10}
+  m_LocalPosition: {x: -14.632689, y: -1.8397299, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4191,7 +4271,7 @@ GameObject:
   - component: {fileID: 536263175}
   - component: {fileID: 536263174}
   - component: {fileID: 536263173}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Tube Four
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4267,7 +4347,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5154,7 +5234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658655345}
   - component: {fileID: 658655346}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5758,7 +5838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 823696491}
   - component: {fileID: 823696492}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5972,7 +6052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832422744}
   - component: {fileID: 832422745}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Blue (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7202,7 +7282,7 @@ GameObject:
   - component: {fileID: 1076778453}
   - component: {fileID: 1076778452}
   - component: {fileID: 1076778451}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Tube Three
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7272,7 +7352,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7482,7 +7562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137618092}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Chemical Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7507,6 +7587,7 @@ Transform:
   - {fileID: 1076778450}
   - {fileID: 536263172}
   - {fileID: 325815249}
+  - {fileID: 346006301}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162161557
@@ -7779,7 +7860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201927531}
   - component: {fileID: 1201927532}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Red (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9226,13 +9307,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3057c3397d6a44c9961597b11378b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
   TextPanel: {fileID: 2080334063}
   displayText: {fileID: 105187262}
-  dialogue:
-  - test
-  options:
-  - a
-  - b
+  textLines:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 64, y: 16}
+    cells:
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+  susValues:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 32, y: 16}
+    cells:
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+    - row: 00000000000000000000000000000000
+  index: 0
+  sus: 0
   ButtonA: {fileID: 156307733}
   ButtonAText: {fileID: 1743748376}
   ButtonB: {fileID: 889882957}
@@ -9241,8 +9352,9 @@ MonoBehaviour:
   ButtonCText: {fileID: 189870985}
   wordSpeed: 0.05
   playerIsClose: 0
-  isBranching: 0
-  changeIsBranching: 0
+  textOptions: 0
+  textLinesNum: 0
+  textIsDone: 0
 --- !u!1 &1423900949
 GameObject:
   m_ObjectHideFlags: 0
@@ -9840,7 +9952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1521804238}
   - component: {fileID: 1521804239}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Blue (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10398,10 +10510,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e3e08ca9d0c4c449ff2b700a4f3f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  other: {fileID: 0}
   swipeStart: {fileID: 1733653805}
   swipeEnd: {fileID: 1054881099}
   minSpeed: 2
   maxSpeed: 4
+  bgTint: {fileID: 0}
   cardSwipe: {fileID: 1700739607}
   cardSwipeTop: {fileID: 1492136833}
   cardSwipeTryAgain: {fileID: 2014218106}
@@ -11209,7 +11323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766336391}
   - component: {fileID: 1766336392}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11976,7 +12090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840217215}
   - component: {fileID: 1840217216}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Green (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12720,7 +12834,7 @@ GameObject:
   - component: {fileID: 1972478102}
   - component: {fileID: 1972478101}
   - component: {fileID: 1972478100}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Tube Two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12796,7 +12910,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13092,7 +13206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2036677752}
   - component: {fileID: 2036677753}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Red (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13377,7 +13491,7 @@ GameObject:
   - component: {fileID: 2050498883}
   - component: {fileID: 2050498882}
   - component: {fileID: 2050498881}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Tube One
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13453,7 +13567,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13977,7 +14091,7 @@ GameObject:
   - component: {fileID: 2118277141}
   - component: {fileID: 2118277140}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Washroom Text on Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14260,7 +14374,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 428892988}
   - {fileID: 641059933}
-  - {fileID: 346006301}
   - {fileID: 1490473186}
   - {fileID: 517653716}
   - {fileID: 2039526038}

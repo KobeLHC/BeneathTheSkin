@@ -21,6 +21,12 @@ public class CardSwipePopUp : MonoBehaviour
         {
             cardSwipe.SetActive(true);
         }
+
+        if (cardSwipe.active)
+        {
+            other.changeRunSpeed(0.0f);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
