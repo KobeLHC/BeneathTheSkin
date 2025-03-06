@@ -8,6 +8,7 @@ TagManager:
   - Sci
   - Sec
   - door
+  - Sci2
   layers:
   - Default
   - TransparentFX
