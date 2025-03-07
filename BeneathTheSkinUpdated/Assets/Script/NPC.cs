@@ -20,8 +20,10 @@ public class NPC : MonoBehaviour
     // Holds all the sus Values for an NPC's dialogue options
     public Array2DInt susValues;
 
+    public Array2DInt buttonIndexing;
+
     // Used to iterate through the above arrays
-    public int index;
+    private int index;
 
     public int sus;
 
@@ -36,10 +38,10 @@ public class NPC : MonoBehaviour
     public float wordSpeed = 0.05f;
     public bool playerIsClose;
     public int textOptions;
-    public int textLinesNum = 0;
+    public int textLinesNum;
     public bool textIsDone;
-    //public int randNum = 0;
-    //public int randMax = 8;
+    public int randNum = 0;
+    public int randMax = 8;
 
     // Update is called once per frame
     void Update()
@@ -102,6 +104,8 @@ public class NPC : MonoBehaviour
     // Method to close text panel
     public void zeroText()
     {
+        Debug.Log("" + index + " " + buttonIndexing.GetCell(0, 0) + " " + buttonIndexing.GetCell(1, 0) + " " + buttonIndexing.GetCell(2, 0));
+        Debug.Log(textLinesNum);
         displayText.text = "";
         index = 0;
         TextPanel.SetActive(false);
@@ -130,32 +134,6 @@ public class NPC : MonoBehaviour
             {
                 displayText.text += textLines.GetCell(0, index)[i];
                 yield return new WaitForSeconds(wordSpeed);
-
-                //fail letter replacement system, might revisit if we need to add more to game
-                /*
-                if (textLines.GetCell(0, index)[i].Equals(" ") || textLines.GetCell(0, index)[i - 1].Equals(" "))
-                {
-                    displayText.text += textLines.GetCell(0, index)[i];
-                    yield return new WaitForSeconds(wordSpeed);
-                }
-                else
-                {
-                    randNum = UnityEngine.Random.Range(0, randMax);
-
-                    if (randNum == 1)
-                    {
-                        randMax = 8;
-                        displayText.text += '*';
-                        yield return new WaitForSeconds(wordSpeed);
-                    }
-                    else
-                    {
-                        randMax--;
-                        displayText.text += textLines.GetCell(0, index)[i];
-                        yield return new WaitForSeconds(wordSpeed);
-                    }
-                }
-                */
             }
         }
     }
@@ -168,9 +146,7 @@ public class NPC : MonoBehaviour
         ButtonC.SetActive(false);
         sus = susValues.GetCell(0, index);
         other.moreSus(sus);
-        index = Convert.ToInt32(textLines.GetCell(1, index).Substring(0, textLines.GetCell(1, index).IndexOf('|')));
-
-
+        index = buttonIndexing.GetCell(0, index);
 
         if (index < textLinesNum)
         {
@@ -180,6 +156,8 @@ public class NPC : MonoBehaviour
         }
         else
         {
+            Debug.Log(index < textLinesNum);
+            Debug.Log(textLinesNum);
             zeroText();
         }
     }
@@ -190,7 +168,7 @@ public class NPC : MonoBehaviour
         ButtonC.SetActive(false);
         sus = susValues.GetCell(1, index);
         other.moreSus(sus);
-        index = Convert.ToInt32(textLines.GetCell(2, index).Substring(0, textLines.GetCell(2, index).IndexOf('|')));
+        index = buttonIndexing.GetCell(1, index);
 
 
         if (index < textLinesNum)
@@ -201,6 +179,8 @@ public class NPC : MonoBehaviour
         }
         else
         {
+            Debug.Log(index < textLinesNum);
+            Debug.Log(textLinesNum);
             zeroText();
         }
     }
@@ -211,16 +191,17 @@ public class NPC : MonoBehaviour
         ButtonC.SetActive(false);
         sus = susValues.GetCell(2, index);
         other.moreSus(sus);
-        index = Convert.ToInt32(textLines.GetCell(3, index).Substring(0, textLines.GetCell(3, index).IndexOf('|')));
+        index = buttonIndexing.GetCell(2, index);
 
         if (index < textLinesNum)
         {
-
             displayText.text = "";
             StartCoroutine(Typing());
         }
         else
         {
+            Debug.Log(index < textLinesNum);
+            Debug.Log(textLinesNum);
             zeroText();
         }
 

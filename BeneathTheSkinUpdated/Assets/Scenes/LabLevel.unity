@@ -1101,7 +1101,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 156566854}
         m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: NextLine
+        m_MethodName: NextLineA
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1216,7 +1216,13 @@ MonoBehaviour:
     - row: 00000000000000000000000000000000
     - row: 00000000000000000000000000000000
     - row: 00000000000000000000000000000000
-  index: 0
+  buttonIndexing:
+    gridSize: {x: 3, y: 3}
+    cellSize: {x: 0, y: 0}
+    cells:
+    - row: 000000000000000000000000
+    - row: 000000000000000000000000
+    - row: 000000000000000000000000
   sus: 0
   ButtonA: {fileID: 156307733}
   ButtonAText: {fileID: 1743748376}
@@ -1229,6 +1235,8 @@ MonoBehaviour:
   textOptions: 0
   textLinesNum: 0
   textIsDone: 0
+  randNum: 0
+  randMax: 8
 --- !u!61 &156566855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9342,7 +9350,13 @@ MonoBehaviour:
     - row: 00000000000000000000000000000000
     - row: 00000000000000000000000000000000
     - row: 00000000000000000000000000000000
-  index: 0
+  buttonIndexing:
+    gridSize: {x: 3, y: 3}
+    cellSize: {x: 0, y: 0}
+    cells:
+    - row: 000000000000000000000000
+    - row: 000000000000000000000000
+    - row: 000000000000000000000000
   sus: 0
   ButtonA: {fileID: 156307733}
   ButtonAText: {fileID: 1743748376}
@@ -9355,6 +9369,8 @@ MonoBehaviour:
   textOptions: 0
   textLinesNum: 0
   textIsDone: 0
+  randNum: 0
+  randMax: 8
 --- !u!1 &1423900949
 GameObject:
   m_ObjectHideFlags: 0
@@ -11149,6 +11165,7 @@ GameObject:
   - component: {fileID: 1762739245}
   - component: {fileID: 1762739244}
   - component: {fileID: 1762739243}
+  - component: {fileID: 1762739246}
   m_Layer: 0
   m_Name: Scientist 2
   m_TagString: Sci2
@@ -11313,6 +11330,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1762739246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762739241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3057c3397d6a44c9961597b11378b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  displayText: {fileID: 105187262}
+  textLines:
+    gridSize: {x: 4, y: 4}
+    cellSize: {x: 64, y: 16}
+    cells:
+    - row:
+      - ^This will give 3 options
+      - 1|Bottom
+      - 2|Middle
+      - 3|Top
+    - row:
+      - '#This will give 2 options'
+      - 2|Next
+      - 1|Beginning
+      - ' '
+    - row:
+      - '@This will give 1 option'
+      - 3|Option
+      - ' '
+      - ' '
+    - row:
+      - '@Ok Bye'
+      - 4|Bye Bye
+      - ' '
+      - ' '
+  susValues:
+    gridSize: {x: 3, y: 4}
+    cellSize: {x: 32, y: 16}
+    cells:
+    - row: 0a000000050000000f000000
+    - row: 000000000500000000000000
+    - row: 000000000000000000000000
+    - row: 0a0000000000000000000000
+  buttonIndexing:
+    gridSize: {x: 3, y: 4}
+    cellSize: {x: 32, y: 16}
+    cells:
+    - row: 010000000200000003000000
+    - row: 020000000100000000000000
+    - row: 030000000000000000000000
+    - row: 040000000000000000000000
+  sus: 0
+  ButtonA: {fileID: 156307733}
+  ButtonAText: {fileID: 1743748376}
+  ButtonB: {fileID: 889882957}
+  ButtonBText: {fileID: 1346106385}
+  ButtonC: {fileID: 1082466269}
+  ButtonCText: {fileID: 189870985}
+  wordSpeed: 0.05
+  playerIsClose: 0
+  textOptions: 0
+  textLinesNum: 4
+  textIsDone: 0
+  randNum: 0
+  randMax: 8
 --- !u!1 &1766336390
 GameObject:
   m_ObjectHideFlags: 0
