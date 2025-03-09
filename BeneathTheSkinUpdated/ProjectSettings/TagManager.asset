@@ -9,6 +9,7 @@ TagManager:
   - Sec
   - door
   - Sci2
+  - Audio
   layers:
   - Default
   - TransparentFX

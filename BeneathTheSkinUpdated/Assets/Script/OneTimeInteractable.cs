@@ -9,6 +9,14 @@ public class OneTimeInteractable : MonoBehaviour
     private bool oneTimeUse = true;
     public GameObject destroyedObject;
 
+    //Sound Effect
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         oneTimeInteractPrompt.SetActive(false);
@@ -16,9 +24,10 @@ public class OneTimeInteractable : MonoBehaviour
 
     void Update()
     {
-        if (playerIsNear && Input.GetKeyDown(KeyCode.Space))
+        if (playerIsNear && Input.GetKeyDown(KeyCode.Space) && destroyedObject != null)
         {
             Debug.Log("Interacted");
+            audioManager.PlaySFX(audioManager.clicking);
             oneTimeInteractPrompt.SetActive(false);
         }
     }

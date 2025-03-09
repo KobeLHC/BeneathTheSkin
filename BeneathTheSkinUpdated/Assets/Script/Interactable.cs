@@ -6,7 +6,14 @@ public class Interactable : MonoBehaviour
 {
     public GameObject interactPrompt;
     private bool playerIsNear = false;
-    // Start is called before the first frame update
+
+    //Sound effect control
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         interactPrompt.SetActive(false);
@@ -18,6 +25,7 @@ public class Interactable : MonoBehaviour
         if(playerIsNear && Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Interacted");
+            audioManager.PlaySFX(audioManager.clicking);
             interactPrompt.SetActive(false);
         }
     }
