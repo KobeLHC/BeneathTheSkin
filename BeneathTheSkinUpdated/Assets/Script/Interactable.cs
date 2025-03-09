@@ -14,6 +14,7 @@ public class Interactable : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
+
     void Start()
     {
         interactPrompt.SetActive(false);

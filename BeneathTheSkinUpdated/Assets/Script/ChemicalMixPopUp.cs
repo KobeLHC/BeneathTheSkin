@@ -19,10 +19,10 @@ public class ChemicalMixPopUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /// Comment out part is for when we want to add condition like buddy change into someone to active the chemcial mix
         if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null/*&& other.GetAnimator().GetBool("___") == true*/)
         {
             chemicalScene.SetActive(true);
-            //Time.timeScale = 0;
         }
 
         if (chemicalScene.active)
@@ -37,6 +37,14 @@ public class ChemicalMixPopUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsClose = false;
         }
     }
 }
