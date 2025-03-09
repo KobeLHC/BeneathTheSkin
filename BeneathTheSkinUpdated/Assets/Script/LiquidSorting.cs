@@ -12,6 +12,14 @@ public class LiquidSorting : MonoBehaviour
     public LevelCode gameManager;
     private static LiquidSorting selectedTube = null; // Stores the first selected tube
 
+    //Sound effect control
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         baseYPosition = transform.position.y - (tubeHeight / 2); // Set the bottom position based on tube height
@@ -54,18 +62,21 @@ public class LiquidSorting : MonoBehaviour
         if (selectedTube == null && liquidLayers.Count > 0)
         {
             // First click: Select this tube if it has liquid
-                selectedTube = this;
-                Debug.Log("Selected tube with top color: " + GetTopColor());
+            selectedTube = this;
+            audioManager.PlaySFX(audioManager.clicking);
+            Debug.Log("Selected tube with top color: " + GetTopColor());
         }
 
         else if (selectedTube != null && selectedTube != this)
         {
             selectedTube.PourLiquid(this);
+            audioManager.PlaySFX(audioManager.clicking);
             selectedTube = null;
         }
 
         else
         {
+
             selectedTube = null;
         }
     }
@@ -97,6 +108,7 @@ public class LiquidSorting : MonoBehaviour
         return Color.clear;
     }
 
+    //Problem part for controlling the liquid positioning
     public Vector3 GetLayerPosition(int layerIndex)
     {
         // Manually calculate Y position for each layer in the tube
@@ -105,21 +117,21 @@ public class LiquidSorting : MonoBehaviour
 
         if(layerIndex == 1)
         {
-            yPos = baseYPosition + (layerHeight * layerIndex) + 0.15f; //adding offset for layer 1 & 2
+            yPos = baseYPosition + (layerHeight * layerIndex) + 0.28f; //adding offset for layer 1
             Debug.Log("This is Layer" + layerIndex);
 
         }
 
         else if (layerIndex == 2)
         {
-            yPos = baseYPosition + (layerHeight * layerIndex) + 0.3f; //adding offset for layer 1 & 2
+            yPos = baseYPosition + (layerHeight * layerIndex) + 0.5f; //adding offset for layer 2
             Debug.Log("This is Layer" + layerIndex);
 
         }
 
         else
         {
-            yPos = baseYPosition + (layerHeight * layerIndex) + 0.04f;
+            yPos = baseYPosition + (layerHeight * layerIndex);
             Debug.Log("This is Layer" + layerIndex);
 
         }

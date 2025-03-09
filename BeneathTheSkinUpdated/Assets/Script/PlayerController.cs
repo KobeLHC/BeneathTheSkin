@@ -36,9 +36,14 @@ public class PlayerController : MonoBehaviour
     //Animation
     private Animator anim;
 
+    //Sound effect control
+    AudioManager audioManager;
+    private bool isWalking;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Start()
@@ -48,6 +53,7 @@ public class PlayerController : MonoBehaviour
         sciOn = false;
         secOn = false;
         sci2On = false;
+        isWalking = false;
     }
 
     void Update()
@@ -56,8 +62,25 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left | 1 is right
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down | 1 is up
 
+        if (horizontal != 0 || vertical != 0)
+        {
+            if (!isWalking)
+            {
+                audioManager.LoopSFX(audioManager.walking);
+                isWalking = true;
+            }
+        }
+        else
+        {
+            if (isWalking)
+            {
+                audioManager.EndSFX(audioManager.walking);
+                isWalking = false;
+            }
+        }
+
         //shape shift
-        if(Input.GetKeyDown(KeyCode.C) == true)
+        if (Input.GetKeyDown(KeyCode.C) == true)
         {
             if (sciOn == true)
             {
