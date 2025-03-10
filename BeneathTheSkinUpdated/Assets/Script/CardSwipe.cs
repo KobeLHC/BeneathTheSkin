@@ -14,11 +14,12 @@ public class CardSwipe : MonoBehaviour
     public float minSpeed = 6.0f; // Adjust these based on testing
     public float maxSpeed = 10.0f;
 
-    public GameObject bgTint;
+    //public GameObject bgTint;
     public GameObject cardSwipe;
     public GameObject cardSwipeTop;
     public GameObject cardSwipeTryAgain;
     public GameObject square;
+    public GameObject door;
 
     private void Update()
     {
@@ -67,10 +68,11 @@ public class CardSwipe : MonoBehaviour
                 cardSwipeTop.SetActive(true);
                 cardSwipeTryAgain.SetActive(false);
                 square.SetActive(false);
-                bgTint.SetActive(false);
+                //bgTint.SetActive(false);
                 cardSwipe.SetActive(false);
-                other.changeRunSpeed(6.0f);
+                other.changeRunSpeed(6.0f); //let player move again, drag Player Controller script to "other" in Card inspector
             }
+            Destroy(door);
         }
     }
 
