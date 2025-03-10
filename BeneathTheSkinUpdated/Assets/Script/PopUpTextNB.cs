@@ -5,6 +5,8 @@ using TMPro;
 
 public class PopUpTextNB : MonoBehaviour
 {
+    public PlayerController other;
+
     // Panel and Text game objects
     public GameObject TextPanel;
     public TMP_Text displayText;
@@ -36,6 +38,7 @@ public class PopUpTextNB : MonoBehaviour
         {
             ButtonA.SetActive(false);
             isTriggered = true;
+            other.changeRunSpeed(0.0f);
 
             // Starts typing out the NPC dialogue
             if (TextPanel.activeInHierarchy)
@@ -63,6 +66,7 @@ public class PopUpTextNB : MonoBehaviour
     {
         displayText.text = "";
         index = 0;
+        other.changeRunSpeed(6.0f);
         TextPanel.SetActive(false);
         //displayText.enabled = false;
     }

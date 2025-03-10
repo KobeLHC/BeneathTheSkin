@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using Array2DEditor;
 
@@ -9,6 +10,8 @@ public class PopUpTextB : MonoBehaviour
 {
     // Reference to player class
     public PlayerController other;
+
+
 
     // Panel and Text game objects
     public GameObject TextPanel;
@@ -20,6 +23,8 @@ public class PopUpTextB : MonoBehaviour
     // Holds all the sus Values for an NPC's dialogue options
     public Array2DInt susValues;
 
+    public Array2DInt buttonIndexing;
+
     // Used to iterate through the above arrays
     public int index;
 
@@ -27,33 +32,45 @@ public class PopUpTextB : MonoBehaviour
 
     // Button variables
     public GameObject ButtonA;
+    public Button AButton;
     public TMP_Text ButtonAText;
+
     public GameObject ButtonB;
+    public Button BButton;
     public TMP_Text ButtonBText;
+
     public GameObject ButtonC;
+    public Button CButton;
     public TMP_Text ButtonCText;
 
     public float wordSpeed = 0.05f;
     public bool playerIsClose;
+    public bool isTriggered = false;
     public int textOptions;
     public int textLinesNum = 0;
     public bool textIsDone;
+    //public int randNum = 0;
+    //public int randMax = 8;
 
-    public bool isTriggered = false;
-
+    void Start()
+    {
+        AButton.onClick.AddListener(NextLineA); // Attach function to button
+        BButton.onClick.AddListener(NextLineB); // Attach function to button
+        CButton.onClick.AddListener(NextLineC); // Attach function to button
+    }
 
     // Update is called once per frame
     void Update()
     {
 
-        // Checls if the player interacted with NPC (checks for player input and if close enough)
+
+        // Checks if the player interacted with NPC (checks for player input and if close enough)
         if (playerIsClose && !isTriggered)
         {
             other.changeRunSpeed(0.0f);
             ButtonA.SetActive(false);
             ButtonB.SetActive(false);
             ButtonC.SetActive(false);
-            isTriggered = true;
 
             // Starts typing out the NPC dialogue
             if (TextPanel.activeInHierarchy)
@@ -63,11 +80,11 @@ public class PopUpTextB : MonoBehaviour
             else
             {
                 TextPanel.SetActive(true);
-                //displayText.enabled = true;
+                displayText.enabled = true;
                 StartCoroutine(Typing());
             }
         }
-        
+
         if (index < textLinesNum)
         {
             // Checks if message is complete
@@ -76,23 +93,23 @@ public class PopUpTextB : MonoBehaviour
 
                 if (textOptions == 1)
                 {
-                    ButtonAText.text = textLines.GetCell(1, index).Substring(textLines.GetCell(1, index).IndexOf('|') + 1);
+                    ButtonAText.text = textLines.GetCell(1, index);
                     ButtonA.SetActive(true);
                 }
                 else if (textOptions == 2)
                 {
-                    ButtonAText.text = textLines.GetCell(1, index).Substring(textLines.GetCell(1, index).IndexOf('|') + 1);
+                    ButtonAText.text = textLines.GetCell(1, index);
                     ButtonA.SetActive(true);
-                    ButtonBText.text = textLines.GetCell(2, index).Substring(textLines.GetCell(2, index).IndexOf('|') + 1);
+                    ButtonBText.text = textLines.GetCell(2, index);
                     ButtonB.SetActive(true);
                 }
                 else if (textOptions == 3)
                 {
-                    ButtonAText.text = textLines.GetCell(1, index).Substring(textLines.GetCell(1, index).IndexOf('|') + 1);
+                    ButtonAText.text = textLines.GetCell(1, index);
                     ButtonA.SetActive(true);
-                    ButtonBText.text = textLines.GetCell(2, index).Substring(textLines.GetCell(2, index).IndexOf('|') + 1);
+                    ButtonBText.text = textLines.GetCell(2, index);
                     ButtonB.SetActive(true);
-                    ButtonCText.text = textLines.GetCell(3, index).Substring(textLines.GetCell(3, index).IndexOf('|') + 1);
+                    ButtonCText.text = textLines.GetCell(3, index);
                     ButtonC.SetActive(true);
                 }
 
@@ -169,9 +186,8 @@ public class PopUpTextB : MonoBehaviour
         ButtonC.SetActive(false);
         sus = susValues.GetCell(0, index);
         other.moreSus(sus);
-        index = Convert.ToInt32(textLines.GetCell(1, index).Substring(0, textLines.GetCell(1, index).IndexOf('|')));
-
-
+        index = buttonIndexing.GetCell(0, index);
+        Debug.Log(index);
 
         if (index < textLinesNum)
         {
@@ -191,8 +207,8 @@ public class PopUpTextB : MonoBehaviour
         ButtonC.SetActive(false);
         sus = susValues.GetCell(1, index);
         other.moreSus(sus);
-        index = Convert.ToInt32(textLines.GetCell(2, index).Substring(0, textLines.GetCell(2, index).IndexOf('|')));
-
+        index = buttonIndexing.GetCell(1, index);
+        Debug.Log(index);
 
         if (index < textLinesNum)
         {
@@ -212,7 +228,8 @@ public class PopUpTextB : MonoBehaviour
         ButtonC.SetActive(false);
         sus = susValues.GetCell(2, index);
         other.moreSus(sus);
-        index = Convert.ToInt32(textLines.GetCell(3, index).Substring(0, textLines.GetCell(3, index).IndexOf('|')));
+        index = buttonIndexing.GetCell(2, index);
+        Debug.Log(index);
 
         if (index < textLinesNum)
         {
