@@ -2968,7 +2968,7 @@ MonoBehaviour:
     - row: 00000000000000000000000000000000
   buttonIndexing:
     gridSize: {x: 4, y: 4}
-    cellSize: {x: 0, y: 0}
+    cellSize: {x: 32, y: 16}
     cells:
     - row: 00000000000000000000000000000000
     - row: 00000000000000000000000000000000
@@ -3610,7 +3610,7 @@ MonoBehaviour:
   player: {fileID: 2039526034}
   screenshotDisplay: {fileID: 1933909138}
   correctPassword: 1234
-  playerInZone: 1
+  playerInZone: 0
   isPasswordUIOpen: 0
 --- !u!4 &255582324
 Transform:
@@ -6325,7 +6325,7 @@ Transform:
   m_GameObject: {fileID: 456186798}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.26, y: 15.83, z: -1}
+  m_LocalPosition: {x: 17.14, y: 16.24, z: -1}
   m_LocalScale: {x: 0.8299, y: 0.8582, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6450,7 +6450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneTimeInteractPrompt: {fileID: 1828001857}
   destroyedObject: {fileID: 456186798}
-  guy: {fileID: 0}
+  guy: {fileID: 2039526034}
   guy2: {fileID: 0}
 --- !u!212 &456186806
 SpriteRenderer:
@@ -14212,8 +14212,8 @@ Transform:
   m_GameObject: {fileID: 1076778449}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.29, y: -0.1402701, z: 9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.2938, y: -0.1629, z: 9}
+  m_LocalScale: {x: 1.0026563, y: 1.0119, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1137618092}
@@ -14280,7 +14280,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 3.79}
+  m_Size: {x: 2.03, y: 6.48}
   m_EdgeRadius: 0
 --- !u!212 &1076778453
 SpriteRenderer:
@@ -16266,7 +16266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Submit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16980,7 +16980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -165.2}
+  m_AnchoredPosition: {x: -0, y: -191.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1363882334
@@ -18564,8 +18564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.2796974, y: 51.341087}
-  m_SizeDelta: {x: 597.5912, y: 348.3672}
+  m_AnchoredPosition: {x: 0.000019073, y: 6.1}
+  m_SizeDelta: {x: 578.3401, y: 316.2819}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1466144038
 CanvasRenderer:
@@ -20931,7 +20931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1725579430
 RectTransform:
   m_ObjectHideFlags: 0

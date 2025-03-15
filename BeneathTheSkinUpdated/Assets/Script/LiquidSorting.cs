@@ -12,7 +12,7 @@ public class LiquidSorting : MonoBehaviour
     public LevelCode gameManager;
     private static LiquidSorting selectedTube = null; // Stores the first selected tube
 
-    //Sound effect control
+    // Sound effect control
     AudioManager audioManager;
 
     private void Awake()
@@ -30,11 +30,10 @@ public class LiquidSorting : MonoBehaviour
         // Checks if tube is full
         if (liquidLayers.Count == 3)
         {
-            if(liquidLayers[0].transform.name[0] == liquidLayers[1].transform.name[0] && liquidLayers[1].transform.name[0] == liquidLayers[2].transform.name[0])
+            if (liquidLayers[0].transform.name[0] == liquidLayers[1].transform.name[0] && liquidLayers[1].transform.name[0] == liquidLayers[2].transform.name[0])
             {
                 isFull = true;
             }
-
             else
             {
                 isFull = false;
@@ -44,7 +43,6 @@ public class LiquidSorting : MonoBehaviour
         {
             isFull = false;
         }
-
 
         if (winCheck && isFull)
         {
@@ -65,19 +63,30 @@ public class LiquidSorting : MonoBehaviour
             selectedTube = this;
             audioManager.PlaySFX(audioManager.clicking);
             Debug.Log("Selected tube with top color: " + GetTopColor());
-        }
 
+            // Move the tube up slightly
+            transform.position += new Vector3(0, 0.2f, 0); // Move up by 0.2 units
+        }
         else if (selectedTube != null && selectedTube != this)
         {
+            // Pour liquid from selected tube to the clicked tube
             selectedTube.PourLiquid(this);
             audioManager.PlaySFX(audioManager.clicking);
+
+            // Reset previous tube's position
+            selectedTube.transform.position -= new Vector3(0, 0.2f, 0);
+
+            // Deselect the tube
             selectedTube = null;
         }
-
         else
         {
-
-            selectedTube = null;
+            // If clicking the same tube again, deselect it
+            if (selectedTube == this)
+            {
+                transform.position -= new Vector3(0, 0.2f, 0); // Move back down
+                selectedTube = null;
+            }
         }
     }
 
@@ -92,7 +101,6 @@ public class LiquidSorting : MonoBehaviour
             topLiquid.transform.position = targetTube.GetLayerPosition(targetTube.liquidLayers.Count - 1);
             topLiquid.GetComponent<SpriteRenderer>().sortingOrder = targetTube.liquidLayers.Count;
         }
-
         else
         {
             Debug.Log("Cannot pour! Target tube is full.");
@@ -108,33 +116,17 @@ public class LiquidSorting : MonoBehaviour
         return Color.clear;
     }
 
-    //Problem part for controlling the liquid positioning
+    // Improved liquid positioning function
     public Vector3 GetLayerPosition(int layerIndex)
     {
-        // Manually calculate Y position for each layer in the tube
         float layerHeight = tubeHeight / maxLayers; // Divide tube height into equal parts
-        float yPos;
+        float yOffset = 0.15f; // Small offset to prevent overlap
 
-        if(layerIndex == 1)
-        {
-            yPos = baseYPosition + (layerHeight * layerIndex) + 0.28f; //adding offset for layer 1
-            Debug.Log("This is Layer" + layerIndex);
+        // Calculate Y position dynamically
+        float yPos = baseYPosition + (layerHeight * layerIndex) + (yOffset * layerIndex);
 
-        }
+        Debug.Log($"Layer {layerIndex} Position: {yPos}");
 
-        else if (layerIndex == 2)
-        {
-            yPos = baseYPosition + (layerHeight * layerIndex) + 0.5f; //adding offset for layer 2
-            Debug.Log("This is Layer" + layerIndex);
-
-        }
-
-        else
-        {
-            yPos = baseYPosition + (layerHeight * layerIndex);
-            Debug.Log("This is Layer" + layerIndex);
-
-        }
         return new Vector3(transform.position.x, yPos, transform.position.z - (0.01f * layerIndex));
     }
 }
