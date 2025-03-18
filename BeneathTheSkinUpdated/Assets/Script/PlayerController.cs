@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
+    public Vector2 faceLeft;
 
     public float runSpeed = 8.0f;
     public int susLevel = 0;
@@ -36,6 +37,17 @@ public class PlayerController : MonoBehaviour
     //Animation
     private Animator anim;
 
+    //Direction Control
+    public bool moveUp;
+    public bool moveDown;
+    public bool moveLeft;
+    public bool moveRight;
+    //public bool idle;
+
+    // Player Animation controller
+    public bool changedSecSprite;
+    public bool changedSci2Sprite;
+
     //Sound effect control
     AudioManager audioManager;
     private bool isWalking;
@@ -54,22 +66,200 @@ public class PlayerController : MonoBehaviour
         secOn = false;
         sci2On = false;
         isWalking = false;
+        changedSecSprite = false;
+        changedSci2Sprite = false;
     }
 
     void Update()
     {
+        // Getting direction as bool and limiting player movement control by WASD and only one direction bool is true at a time
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            moveUp = true;
+            moveDown = false;
+            moveLeft = false;
+            moveRight = false;
+            //idle = false;
+            Debug.Log("Up");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            moveUp = false;
+            moveDown = false;
+            moveLeft = true;
+            moveRight = false;
+            //idle = false;
+            Debug.Log("Left");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            moveUp = false;
+            moveDown = true;
+            moveLeft = false;
+            moveRight = false;
+            //idle = false;
+            Debug.Log("Down");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            moveUp = false;
+            moveDown = false;
+            moveLeft = false;
+            moveRight = true;
+            //idle = false;
+            Debug.Log("Right");
+        }
+
+        // Idle purpose ** NO USE FOR NOW **
+        //else
+        //{
+        //    moveUp = false;
+        //    moveDown = false;
+        //    moveLeft = false;
+        //    moveRight = false;
+        //    idle = true;
+        //    Debug.Log("Idle");
+        //}
+
+        //Changing to Sec animation and which animation to play
+        if (changedSecSprite)
+        {
+            anim.SetBool("sci2Idle", false);
+            anim.SetBool("sci2Up", false);
+            anim.SetBool("sci2Left", false);
+            anim.SetBool("sci2Right", false);
+            anim.SetBool("sci2Down", false);
+
+            // Idle
+            //if (idle)
+            //{
+            //    anim.SetBool("secIdle", true);
+            //    anim.SetBool("secUp", false);
+            //    anim.SetBool("secLeft", false);
+            //    anim.SetBool("secRight", false);
+            //    anim.SetBool("secDown", false);
+            //}
+
+            //Up
+            if (moveUp)
+            {
+                anim.SetBool("secIdle", false);
+                anim.SetBool("secUp", true);
+                anim.SetBool("secLeft", false);
+                anim.SetBool("secRight", false);
+                anim.SetBool("secDown", false);
+            }
+
+            //Down
+            else if (moveDown)
+            {
+                anim.SetBool("secIdle", false);
+                anim.SetBool("secUp", false);
+                anim.SetBool("secLeft", false);
+                anim.SetBool("secRight", false);
+                anim.SetBool("secDown", true);
+            }
+
+            //Left
+            else if (moveLeft)
+            {
+                anim.SetBool("secIdle", false);
+                anim.SetBool("secUp", false);
+                anim.SetBool("secLeft", true);
+                anim.SetBool("secRight", false);
+                anim.SetBool("secDown", false);
+            }
+
+            //Right
+            else if (moveRight)
+            {
+                anim.SetBool("secIdle", false);
+                anim.SetBool("secUp", false);
+                anim.SetBool("secLeft", false);
+                anim.SetBool("secRight", true);
+                anim.SetBool("secDown", false);
+            }
+        }
+
+        //Changing to Sci2 animation and which animation to play
+        if (changedSci2Sprite)
+        {
+            anim.SetBool("secIdle", false);
+            anim.SetBool("secUp", false);
+            anim.SetBool("secLeft", false);
+            anim.SetBool("secRight", false);
+            anim.SetBool("secDown", false);
+
+            // Idle
+            //if (idle)
+            //{
+            //    anim.SetBool("sci2Idle", true);
+            //    anim.SetBool("sci2Up", false);
+            //    anim.SetBool("sci2Left", false);
+            //    anim.SetBool("sci2Right", false);
+            //    anim.SetBool("sci2Down", false);
+            //}
+
+            //Up
+            if (moveUp)
+            {
+                anim.SetBool("sci2Idle", false);
+                anim.SetBool("sci2Up", true);
+                anim.SetBool("sci2Left", false);
+                anim.SetBool("sci2Right", false);
+                anim.SetBool("sci2Down", false);
+            }
+
+            //Down
+            else if (moveDown)
+            {
+                anim.SetBool("sci2Idle", false);
+                anim.SetBool("sci2Up", false);
+                anim.SetBool("sci2Left", false);
+                anim.SetBool("sci2Right", false);
+                anim.SetBool("sci2Down", true);
+            }
+
+            //Left
+            else if (moveLeft)
+            {
+                anim.SetBool("sci2Idle", false);
+                anim.SetBool("sci2Up", false);
+                anim.SetBool("sci2Left", true);
+                anim.SetBool("sci2Right", false);
+                anim.SetBool("sci2Down", false);
+            }
+
+            //Right
+            else if (moveRight)
+            {
+                anim.SetBool("sci2Idle", false);
+                anim.SetBool("sci2Up", false);
+                anim.SetBool("sci2Left", false);
+                anim.SetBool("sci2Right", true);
+                anim.SetBool("sci2Down", false);
+            }
+        }
+
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left | 1 is right
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down | 1 is up
 
+        //Walking SFX control
         if (horizontal != 0 || vertical != 0)
         {
+
             if (!isWalking)
             {
                 audioManager.LoopSFX(audioManager.walking);
                 isWalking = true;
             }
         }
+
         else
         {
             if (isWalking)
@@ -154,40 +344,54 @@ public class PlayerController : MonoBehaviour
     //player change into security
     public void ChangePlayerSec()
     {
-        if (anim.GetBool("changeSec") == false)
+        //player changed into sec
+        if (changedSecSprite == false)
         {
             spriteRenderer.sprite = newSprite2;
-            anim.SetBool("changeSec", true);
+            changedSecSprite = true;
+            changedSci2Sprite = false;
             anim.SetBool("changeSci", false);
-            anim.SetBool("changeSci2", false);
-            Debug.Log("changeSec true");
+            Debug.Log("changedSecSprite true");
         }
 
+        //Reset player sprite to buddy
         else
         {
+            changedSecSprite = false;
+            anim.SetBool("secIdle", false);
+            anim.SetBool("secUp", false);
+            anim.SetBool("secLeft", false);
+            anim.SetBool("secRight", false);
+            anim.SetBool("secDown", false);
             spriteRenderer.sprite = basicSprite;
-            anim.SetBool("changeSec", false);
-            Debug.Log("changeSec false");
+            Debug.Log("changedSecSprite false");
         }
     }
 
     //player change into scientist 2
     public void ChangePlayerSci2()
     {
-        if (anim.GetBool("changeSci2") == false)
+        //changed into sci2
+        if (changedSci2Sprite == false)
         {
             spriteRenderer.sprite = newSprite3;
-            anim.SetBool("changeSci2", true);
+            changedSci2Sprite = true;
+            changedSecSprite = false;
             anim.SetBool("changeSci", false);
-            anim.SetBool("changeSec", false);
-            Debug.Log("changeSci2 true");
+            Debug.Log("changedSci2Sprite true");
         }
 
+        //Reset player sprite to buddy
         else
         {
+            changedSci2Sprite = false;
+            anim.SetBool("sci2Idle", false);
+            anim.SetBool("sci2Up", false);
+            anim.SetBool("sci2Left", false);
+            anim.SetBool("sci2Right", false);
+            anim.SetBool("sci2Down", false);
             spriteRenderer.sprite = basicSprite;
-            anim.SetBool("changeSci2", false);
-            Debug.Log("changeSci2 false");
+            Debug.Log("changedSci2Sprite false");
         }
     }
 

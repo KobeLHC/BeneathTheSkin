@@ -8,8 +8,6 @@ public class OneTimeInteractable : MonoBehaviour
     private bool playerIsNear = false;
     private bool oneTimeUse = true;
     public GameObject destroyedObject;
-    public GameObject guy;
-    public GameObject guy2;
 
     //Sound Effect
     AudioManager audioManager;
@@ -28,11 +26,14 @@ public class OneTimeInteractable : MonoBehaviour
     {
         if (playerIsNear && Input.GetKeyDown(KeyCode.Space) && destroyedObject != null)
         {
+            if(destroyedObject.tag == "tp")
+            {
+                Destroy(destroyedObject);
+            }
+
             Debug.Log("Interacted");
             audioManager.PlaySFX(audioManager.clicking);
             oneTimeInteractPrompt.SetActive(false);
-            guy.SetActive(true);
-            guy2.SetActive(false);
         }
     }
 

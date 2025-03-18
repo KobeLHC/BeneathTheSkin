@@ -17,7 +17,9 @@ public class CardSwipe : MonoBehaviour
     //public GameObject bgTint;
     public GameObject cardSwipe;
     public GameObject cardSwipeTop;
-    public GameObject cardSwipeTryAgain;
+    //public GameObject cardSwipeTryAgain;
+    public GameObject cardTooFast;
+    public GameObject cardTooSlow;
     public GameObject square;
     public GameObject door;
 
@@ -51,14 +53,16 @@ public class CardSwipe : MonoBehaviour
             if (swipeSpeed < minSpeed)
             {
                 Debug.Log("Too Slow! Try Again. " + swipeSpeed);
-                cardSwipeTryAgain.SetActive(true);
+                cardTooSlow.SetActive(true);
+                cardTooFast.SetActive(false);
                 cardSwipeTop.SetActive(false);
                 ResetCard();
             }
             else if (swipeSpeed > maxSpeed)
             {
                 Debug.Log("Too Fast! Try Again. " + swipeSpeed);
-                cardSwipeTryAgain.SetActive(true);
+                cardTooFast.SetActive(true);
+                cardTooSlow.SetActive(false);
                 cardSwipeTop.SetActive(false);
                 ResetCard();
             }
@@ -66,7 +70,8 @@ public class CardSwipe : MonoBehaviour
             {
                 Debug.Log("Swipe Successful! " + swipeSpeed);
                 cardSwipeTop.SetActive(true);
-                cardSwipeTryAgain.SetActive(false);
+                cardTooFast.SetActive(false);
+                cardTooSlow.SetActive(false);
                 square.SetActive(false);
                 //bgTint.SetActive(false);
                 cardSwipe.SetActive(false);

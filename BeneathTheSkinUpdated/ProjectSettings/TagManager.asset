@@ -10,6 +10,7 @@ TagManager:
   - door
   - Sci2
   - Audio
+  - tp
   layers:
   - Default
   - TransparentFX
