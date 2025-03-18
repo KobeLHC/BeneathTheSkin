@@ -3,7 +3,7 @@ guid: 6e01d0145493dc3458c3f0940f0c37b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -126,12 +126,12 @@ TextureImporter:
       name: small moidle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 196
+        x: 4
+        y: 197
         width: 19
-        height: 29
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: small moidle_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 157
+        x: 4
+        y: 158
         width: 19
-        height: 31
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: small moidle_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 118
-        width: 20
-        height: 32
+        x: 4
+        y: 119
+        width: 19
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: small moidle_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 79
-        width: 21
-        height: 34
+        x: 4
+        y: 80
+        width: 19
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: small moidle_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 36
-        width: 21
-        height: 39
+        x: 4
+        y: 41
+        width: 19
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: small moidle_5
       rect:
         serializedVersion: 2
-        x: 8
-        y: 23
-        width: 13
-        height: 8
+        x: 5
+        y: 2
+        width: 19
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: small moidle_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
+        x: 5
+        y: 2
         width: 19
-        height: 22
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
