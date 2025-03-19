@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
             moveDown = false;
             moveLeft = false;
             moveRight = false;
-            Debug.Log("Up");
+            //Debug.Log("Up");
         }
 
         else if (Input.GetKey(KeyCode.A))
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
             moveDown = false;
             moveLeft = true;
             moveRight = false;
-            Debug.Log("Left");
+            //Debug.Log("Left");
         }
 
         else if (Input.GetKey(KeyCode.S))
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
             moveDown = true;
             moveLeft = false;
             moveRight = false;
-            Debug.Log("Down");
+            //Debug.Log("Down");
         }
 
         else if (Input.GetKey(KeyCode.D))
@@ -111,142 +111,29 @@ public class PlayerController : MonoBehaviour
             moveDown = false;
             moveLeft = false;
             moveRight = true;
-            Debug.Log("Right");
+            //Debug.Log("Right");
         }
 
         //Changing to Sec animation and which animation to play
         if (changedSecSprite)
         {
-            //update
+            //different animation for security movement
             anim.SetBool("secIdle", !(moveUp || moveDown || moveLeft || moveRight));
             anim.SetBool("secUp", moveUp);
             anim.SetBool("secLeft", moveLeft);
             anim.SetBool("secRight", moveRight);
             anim.SetBool("secDown", moveDown);
-
-
-            //anim.SetBool("sci2Idle", false);
-            //anim.SetBool("sci2Up", false);
-            //anim.SetBool("sci2Left", false);
-            //anim.SetBool("sci2Right", false);
-            //anim.SetBool("sci2Down", false);
-
-            // Idle
-            //if (idle)
-            //{
-            //    anim.SetBool("secIdle", true);
-            //    anim.SetBool("secUp", false);
-            //    anim.SetBool("secLeft", false);
-            //    anim.SetBool("secRight", false);
-            //    anim.SetBool("secDown", false);
-            //}
-
-            //Up
-            //if (moveUp)
-            //{
-            //    anim.SetBool("secIdle", false);
-            //    anim.SetBool("secUp", true);
-            //    anim.SetBool("secLeft", false);
-            //    anim.SetBool("secRight", false);
-            //    anim.SetBool("secDown", false);
-            //}
-
-            ////Down
-            //else if (moveDown)
-            //{
-            //    anim.SetBool("secIdle", false);
-            //    anim.SetBool("secUp", false);
-            //    anim.SetBool("secLeft", false);
-            //    anim.SetBool("secRight", false);
-            //    anim.SetBool("secDown", true);
-            //}
-
-            ////Left
-            //else if (moveLeft)
-            //{
-            //    anim.SetBool("secIdle", false);
-            //    anim.SetBool("secUp", false);
-            //    anim.SetBool("secLeft", true);
-            //    anim.SetBool("secRight", false);
-            //    anim.SetBool("secDown", false);
-            //}
-
-            ////Right
-            //else if (moveRight)
-            //{
-            //    anim.SetBool("secIdle", false);
-            //    anim.SetBool("secUp", false);
-            //    anim.SetBool("secLeft", false);
-            //    anim.SetBool("secRight", true);
-            //    anim.SetBool("secDown", false);
-            //}
         }
 
         //Changing to Sci2 animation and which animation to play
         if (changedSci2Sprite)
         {
-            //update
+            //different animation for scientist2 movement
             anim.SetBool("sci2Idle", !(moveUp || moveDown || moveLeft || moveRight));
             anim.SetBool("sci2Up", moveUp);
             anim.SetBool("sci2Left", moveLeft);
             anim.SetBool("sci2Right", moveRight);
             anim.SetBool("sci2Down", moveDown);
-
-            //anim.SetBool("secIdle", false);
-            //anim.SetBool("secUp", false);
-            //anim.SetBool("secLeft", false);
-            //anim.SetBool("secRight", false);
-            //anim.SetBool("secDown", false);
-
-            //// Idle
-            ////if (idle)
-            ////{
-            ////    anim.SetBool("sci2Idle", true);
-            ////    anim.SetBool("sci2Up", false);
-            ////    anim.SetBool("sci2Left", false);
-            ////    anim.SetBool("sci2Right", false);
-            ////    anim.SetBool("sci2Down", false);
-            ////}
-
-            ////Up
-            //if (moveUp)
-            //{
-            //    anim.SetBool("sci2Idle", false);
-            //    anim.SetBool("sci2Up", true);
-            //    anim.SetBool("sci2Left", false);
-            //    anim.SetBool("sci2Right", false);
-            //    anim.SetBool("sci2Down", false);
-            //}
-
-            ////Down
-            //else if (moveDown)
-            //{
-            //    anim.SetBool("sci2Idle", false);
-            //    anim.SetBool("sci2Up", false);
-            //    anim.SetBool("sci2Left", false);
-            //    anim.SetBool("sci2Right", false);
-            //    anim.SetBool("sci2Down", true);
-            //}
-
-            ////Left
-            //else if (moveLeft)
-            //{
-            //    anim.SetBool("sci2Idle", false);
-            //    anim.SetBool("sci2Up", false);
-            //    anim.SetBool("sci2Left", true);
-            //    anim.SetBool("sci2Right", false);
-            //    anim.SetBool("sci2Down", false);
-            //}
-
-            ////Right
-            //else if (moveRight)
-            //{
-            //    anim.SetBool("sci2Idle", false);
-            //    anim.SetBool("sci2Up", false);
-            //    anim.SetBool("sci2Left", false);
-            //    anim.SetBool("sci2Right", true);
-            //    anim.SetBool("sci2Down", false);
-            //}
         }
 
         // Gives a value between -1 and 1
@@ -354,23 +241,17 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = newSprite2;
             changedSecSprite = true;
             changedSci2Sprite = false;
-            //anim.SetBool("changeSci", false);
             ResetAllAnimations();
-            Debug.Log("changedSecSprite true");
+            //Debug.Log("changedSecSprite true");
         }
 
         //Reset player sprite to buddy
         else
         {
             changedSecSprite = false;
-            //anim.SetBool("secIdle", false);
-            //anim.SetBool("secUp", false);
-            //anim.SetBool("secLeft", false);
-            //anim.SetBool("secRight", false);
-            //anim.SetBool("secDown", false);
             ResetAllAnimations();
             spriteRenderer.sprite = basicSprite;
-            Debug.Log("changedSecSprite false");
+            //Debug.Log("changedSecSprite false");
         }
     }
 
@@ -383,23 +264,17 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = newSprite3;
             changedSci2Sprite = true;
             changedSecSprite = false;
-            //anim.SetBool("changeSci", false);
             ResetAllAnimations();
-            Debug.Log("changedSci2Sprite true");
+            //Debug.Log("changedSci2Sprite true");
         }
 
         //Reset player sprite to buddy
         else
         {
             changedSci2Sprite = false;
-            //anim.SetBool("sci2Idle", false);
-            //anim.SetBool("sci2Up", false);
-            //anim.SetBool("sci2Left", false);
-            //anim.SetBool("sci2Right", false);
-            //anim.SetBool("sci2Down", false);
             ResetAllAnimations();
             spriteRenderer.sprite = basicSprite;
-            Debug.Log("changedSci2Sprite false");
+            //Debug.Log("changedSci2Sprite false");
         }
     }
 
@@ -442,9 +317,8 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("sci2Right", false);
         anim.SetBool("sci2Down", false);
 
+        //Jerry anim bool
         anim.SetBool("changeSci", false);
-        //anim.SetBool("changeSec", false);
-        //anim.SetBool("changeSci2", false);
     }
 
     public Animator GetAnimator()

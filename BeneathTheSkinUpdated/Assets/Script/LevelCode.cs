@@ -11,10 +11,13 @@ public class LevelCode : MonoBehaviour
     public GameObject destroyObjectChem;
     public PlayerController other;
 
+    //End game control
+    public bool finishedPuzzle;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        finishedPuzzle = false;
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class LevelCode : MonoBehaviour
         {
             chemicalScene.SetActive(false);
             other.changeRunSpeed(6.0f);
-            //Time.timeScale = 1;
+            finishedPuzzle = true;
             Destroy(destroyObjectChem);
         }
     }
@@ -34,6 +37,11 @@ public class LevelCode : MonoBehaviour
     public void WinProgUp()
     {
         winProgress += 1;
+    }
+
+    public bool getCondition()
+    {
+        return finishedPuzzle;
     }
 
 }

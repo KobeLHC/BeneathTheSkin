@@ -14,10 +14,14 @@ public class EnterPasswordSystem : MonoBehaviour
     public bool playerInZone = false; // Track if the player is in the zone
     public bool isPasswordUIOpen = false; // Track if the UI is open
 
+    //End game control
+    public bool finishedPuzzle;
+
     void Start()
     {
         passwordPanel.SetActive(false); // Hide the password UI initially
         submitButton.onClick.AddListener(CheckPassword); // Attach function to button
+        finishedPuzzle = false;
     }
 
     void Update()
@@ -55,6 +59,7 @@ public class EnterPasswordSystem : MonoBehaviour
     {
         if (passwordInput.text == correctPassword)
         {
+            finishedPuzzle = true;
             passwordPanel.SetActive(false);
             isPasswordUIOpen = false;
             Debug.Log("Correct password entered!");
@@ -64,5 +69,10 @@ public class EnterPasswordSystem : MonoBehaviour
         {
             Debug.Log("Wrong password! Try again.");
         }
+    }
+
+    public bool getCondition()
+    {
+        return finishedPuzzle;
     }
 }

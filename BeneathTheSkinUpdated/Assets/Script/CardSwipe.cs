@@ -23,6 +23,14 @@ public class CardSwipe : MonoBehaviour
     public GameObject square;
     public GameObject door;
 
+    //End game control
+    public bool finishedPuzzle;
+
+    private void Start()
+    {
+        finishedPuzzle = false;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Start Swipe
@@ -69,6 +77,7 @@ public class CardSwipe : MonoBehaviour
             else
             {
                 Debug.Log("Swipe Successful! " + swipeSpeed);
+                finishedPuzzle = true;
                 cardSwipeTop.SetActive(true);
                 cardTooFast.SetActive(false);
                 cardTooSlow.SetActive(false);
@@ -84,5 +93,10 @@ public class CardSwipe : MonoBehaviour
     private void ResetCard()
     {
         transform.position = swipeStart.position;
+    }
+
+    public bool getCondition()
+    {
+        return finishedPuzzle;
     }
 }
