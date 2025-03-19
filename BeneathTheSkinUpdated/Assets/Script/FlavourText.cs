@@ -10,6 +10,7 @@ public class FlavourText : MonoBehaviour
 
     // Panel and Text game objects
     public GameObject TextPanel;
+    public GameObject GameObjGroup;
     public TMP_Text displayText;
 
     // Holds all the text

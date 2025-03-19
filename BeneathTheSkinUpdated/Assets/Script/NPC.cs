@@ -13,6 +13,7 @@ public class NPC : MonoBehaviour
 
     // Panel and Text game objects
     public GameObject TextPanel;
+    public GameObject GameObjGroup;
     public TMP_Text displayText;
 
     // Holds all the text for an NPC
@@ -71,7 +72,7 @@ public class NPC : MonoBehaviour
             //guy.SetActive(false);
             //guy2.SetActive(false);
             displayText.text = "";
-            index = 0;
+            //index = 0;
             other.changeRunSpeed(0.0f);
             ButtonA.SetActive(false);
             ButtonB.SetActive(false);
