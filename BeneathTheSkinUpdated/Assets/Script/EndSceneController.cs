@@ -9,16 +9,19 @@ public class EndSceneController : MonoBehaviour
     public GameObject cardPuzzle;
     public GameObject passwordPuzzle;
     public GameObject chemicalPuzzle;
+    public GameObject player;
 
     //Getting GameObject Component and condition
     public CardSwipe cardObject;
     public EnterPasswordSystem passwordObject;
     public LevelCode chemicalObject;
+    public PlayerController playerObject;
 
-    //In script bool to control what scene to load
+    //In script bool/condition to control what scene to load
     public bool cardDone;
     public bool passwordDone;
     public bool chemicalDone;
+    public int playerLose;
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class EndSceneController : MonoBehaviour
         cardObject = cardPuzzle.GetComponent<CardSwipe>();
         passwordObject = passwordPuzzle.GetComponent<EnterPasswordSystem>();
         chemicalObject = chemicalPuzzle.GetComponent<LevelCode>();
+        playerObject = player.GetComponent<PlayerController>();
     }
 
     void Update()
@@ -34,6 +38,12 @@ public class EndSceneController : MonoBehaviour
         cardDone = cardObject.getCondition();
         passwordDone = passwordObject.getCondition();
         chemicalDone = chemicalObject.getCondition();
+        playerLose = playerObject.susLevel;
+
+        if(playerLose >= 100)
+        {
+            SceneManager.LoadScene("Lose");
+        }
         
     }
 

@@ -7,6 +7,11 @@ public class Interactable : MonoBehaviour
     public GameObject interactPrompt;
     private bool playerIsNear = false;
 
+    //Sprite change for interactable
+    //private SpriteRenderer spriteRenderer;
+    //public Sprite basicSprite;
+    //public Sprite interactSprite;
+
     //Sound effect control
     AudioManager audioManager;
 
@@ -18,9 +23,9 @@ public class Interactable : MonoBehaviour
     void Start()
     {
         interactPrompt.SetActive(false);
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(playerIsNear && Input.GetKeyDown(KeyCode.Space))
@@ -28,6 +33,7 @@ public class Interactable : MonoBehaviour
             Debug.Log("Interacted");
             audioManager.PlaySFX(audioManager.clicking);
             interactPrompt.SetActive(false);
+            //spriteRenderer.sprite = basicSprite;
         }
     }
 
@@ -37,6 +43,7 @@ public class Interactable : MonoBehaviour
         {
             playerIsNear = true;
             interactPrompt.SetActive(true);
+            //spriteRenderer.sprite = interactSprite;
         }
 
 
@@ -48,6 +55,7 @@ public class Interactable : MonoBehaviour
         {
             playerIsNear = false;
             interactPrompt.SetActive(false);
+            //spriteRenderer.sprite = basicSprite;
         }
     }
 }

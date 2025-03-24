@@ -12,6 +12,11 @@ public class OneTimeInteractable : MonoBehaviour
     //Sound Effect
     AudioManager audioManager;
 
+    //Sprite change for interactable
+    //private SpriteRenderer spriteRenderer;
+    //public Sprite basicSprite;
+    //public Sprite interactSprite;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -20,6 +25,7 @@ public class OneTimeInteractable : MonoBehaviour
     void Start()
     {
         oneTimeInteractPrompt.SetActive(false);
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -32,8 +38,10 @@ public class OneTimeInteractable : MonoBehaviour
             }
 
             Debug.Log("Interacted");
+            //spriteRenderer.sprite = basicSprite; ** May leave it comment out
             audioManager.PlaySFX(audioManager.clicking);
             oneTimeInteractPrompt.SetActive(false);
+
         }
     }
 
@@ -50,6 +58,8 @@ public class OneTimeInteractable : MonoBehaviour
             {
                 playerIsNear = true;
                 oneTimeInteractPrompt.SetActive(true);
+                //spriteRenderer.sprite = interactSprite;
+
             }
         }
 
@@ -68,6 +78,8 @@ public class OneTimeInteractable : MonoBehaviour
             {
                 playerIsNear = false;
                 oneTimeInteractPrompt.SetActive(false);
+                //spriteRenderer.sprite = interactSprite;
+
             }
         }
     }
