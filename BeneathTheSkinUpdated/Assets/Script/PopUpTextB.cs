@@ -33,15 +33,12 @@ public class PopUpTextB : MonoBehaviour
 
     // Button variables
     public GameObject ButtonA;
-    public Button AButton;
     public TMP_Text ButtonAText;
 
     public GameObject ButtonB;
-    public Button BButton;
     public TMP_Text ButtonBText;
 
     public GameObject ButtonC;
-    public Button CButton;
     public TMP_Text ButtonCText;
 
     public float wordSpeed = 0.05f;
@@ -55,9 +52,7 @@ public class PopUpTextB : MonoBehaviour
 
     void Start()
     {
-        AButton.onClick.AddListener(NextLineA); // Attach function to button
-        BButton.onClick.AddListener(NextLineB); // Attach function to button
-        CButton.onClick.AddListener(NextLineC); // Attach function to button
+
     }
 
     // Update is called once per frame
@@ -81,6 +76,7 @@ public class PopUpTextB : MonoBehaviour
             else
             {
                 TextPanel.SetActive(true);
+                GameObjGroup.SetActive(true);
                 displayText.enabled = true;
                 StartCoroutine(Typing());
             }
