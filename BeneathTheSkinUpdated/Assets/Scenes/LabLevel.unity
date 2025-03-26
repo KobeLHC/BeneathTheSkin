@@ -2154,13 +2154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 2039526035}
   TextPanel: {fileID: 2080334063}
-  GameObjGroup: {fileID: 0}
+  GameObjGroup: {fileID: 1529630687}
   displayText: {fileID: 105187262}
   dialogue:
   - There's a sticky note in the trash bin. It has "1234" written down on it.
   ButtonA: {fileID: 2011042879}
   ButtonAText: {fileID: 1724578553}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &127497314
@@ -2673,11 +2673,12 @@ MonoBehaviour:
   ButtonBText: {fileID: 1346106385}
   ButtonC: {fileID: 1082466269}
   ButtonCText: {fileID: 189870985}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   textOptions: 0
   textLinesNum: 4
   textIsDone: 0
+  isTalking: 0
 --- !u!61 &156566855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3753,13 +3754,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 2039526035}
   TextPanel: {fileID: 2080334063}
-  GameObjGroup: {fileID: 0}
+  GameObjGroup: {fileID: 1529630687}
   displayText: {fileID: 105187262}
   dialogue:
   - You should give this to Jerry.
   ButtonA: {fileID: 2011042879}
   ButtonAText: {fileID: 1724578553}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &242174048
@@ -4600,7 +4601,7 @@ MonoBehaviour:
   ButtonBText: {fileID: 1364034352}
   ButtonC: {fileID: 792216751}
   ButtonCText: {fileID: 434822683}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
   textOptions: 0
@@ -6942,7 +6943,7 @@ Transform:
   m_GameObject: {fileID: 428892985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.32, y: 5.05, z: -10}
+  m_LocalPosition: {x: -17.11, y: -2.87, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7713,7 +7714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 2039526035}
   TextPanel: {fileID: 2080334063}
-  GameObjGroup: {fileID: 0}
+  GameObjGroup: {fileID: 1529630687}
   displayText: {fileID: 105187262}
   dialogue:
   - After interacting with other people, it seems as though this monster can shapeshift.
@@ -7721,7 +7722,7 @@ MonoBehaviour:
     it interacted with.
   ButtonA: {fileID: 2011042879}
   ButtonAText: {fileID: 1724578553}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &461792320
@@ -8934,7 +8935,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.32, y: 5.05, z: -10}
+  m_LocalPosition: {x: -14.4002495, y: -2.86979, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19434,11 +19435,12 @@ MonoBehaviour:
   ButtonBText: {fileID: 1626290187}
   ButtonC: {fileID: 1226852094}
   ButtonCText: {fileID: 70458281}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   textOptions: 0
   textLinesNum: 4
   textIsDone: 0
+  isTalking: 0
 --- !u!1 &1391630227
 GameObject:
   m_ObjectHideFlags: 0
@@ -21034,8 +21036,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2011042880}
   - {fileID: 105187261}
+  - {fileID: 2011042880}
   m_Father: {fileID: 2080334064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -23650,11 +23652,12 @@ MonoBehaviour:
   ButtonBText: {fileID: 2001987011}
   ButtonC: {fileID: 817281470}
   ButtonCText: {fileID: 415343289}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   textOptions: 0
   textLinesNum: 3
   textIsDone: 0
+  isTalking: 0
 --- !u!1 &1766336390
 GameObject:
   m_ObjectHideFlags: 0
@@ -27071,7 +27074,7 @@ Transform:
   m_GameObject: {fileID: 2039526034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.32, y: 5.05, z: 0}
+  m_LocalPosition: {x: -17.11, y: -2.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28538,7 +28541,7 @@ MonoBehaviour:
   - I'm in the stall at the end!
   ButtonA: {fileID: 2131634044}
   ButtonAText: {fileID: 646365248}
-  wordSpeed: 0.01
+  wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &2118277142

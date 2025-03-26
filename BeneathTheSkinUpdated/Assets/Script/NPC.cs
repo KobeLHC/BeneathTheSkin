@@ -44,6 +44,7 @@ public class NPC : MonoBehaviour
     public int textOptions;
     public int textLinesNum = 0;
     public bool textIsDone;
+    public bool isTalking;
     //public int randNum = 0;
     //public int randMax = 8;
 
@@ -62,7 +63,7 @@ public class NPC : MonoBehaviour
 
 
         // Checks if the player interacted with NPC (checks for player input and if close enough)
-        if (Input.GetKeyDown(KeyCode.Space) && playerIsClose)
+        if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && !isTalking)
         {
             //guy.SetActive(false);
             //guy2.SetActive(false);
@@ -72,6 +73,7 @@ public class NPC : MonoBehaviour
             ButtonA.SetActive(false);
             ButtonB.SetActive(false);
             ButtonC.SetActive(false);
+            isTalking = true;
 
             // Starts typing out the NPC dialogue
             if (TextPanel.activeInHierarchy)
@@ -130,6 +132,7 @@ public class NPC : MonoBehaviour
         other.changeRunSpeed(6.0f);
         //guy.SetActive(true);
         //guy2.SetActive(true);
+        isTalking = false;
     }
 
     // Below is how each letter is typed one at a time. Is also how the code checks whether the text should be branching or not.
