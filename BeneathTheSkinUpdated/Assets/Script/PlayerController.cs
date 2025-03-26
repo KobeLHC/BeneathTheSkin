@@ -30,12 +30,12 @@ public class PlayerController : MonoBehaviour
     public Sprite basicSprite;
 
     //which shape to change
-    private bool sciOn;
-    private bool secOn;
-    private bool sci2On;
+    public bool sciOn;
+    public bool secOn;
+    public bool sci2On;
 
     //Animation
-    private Animator anim;
+    public Animator anim;
 
     //Direction Control
     public bool moveUp;

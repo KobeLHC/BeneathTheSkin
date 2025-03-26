@@ -9,7 +9,7 @@ using Array2DEditor;
 public class NPC : MonoBehaviour
 {
     // Reference to player class
-    public PlayerController other;
+    public PlayerController player;
 
     // Panel and Text game objects
     public GameObject TextPanel;
@@ -27,6 +27,7 @@ public class NPC : MonoBehaviour
     // Used to iterate through the above arrays
     public int index;
 
+    // Sus meter
     public int sus;
 
     // Button variables
@@ -48,9 +49,6 @@ public class NPC : MonoBehaviour
     //public int randNum = 0;
     //public int randMax = 8;
 
-    //public GameObject guy;
-    //public GameObject guy2;
-
 
     void Start()
     {
@@ -69,7 +67,7 @@ public class NPC : MonoBehaviour
             //guy2.SetActive(false);
             displayText.text = "";
             //index = 0;
-            other.changeRunSpeed(0.0f);
+            player.changeRunSpeed(0.0f);
             ButtonA.SetActive(false);
             ButtonB.SetActive(false);
             ButtonC.SetActive(false);
@@ -129,9 +127,7 @@ public class NPC : MonoBehaviour
         TextPanel.SetActive(false);
         GameObjGroup.SetActive(false);
         //displayText.enabled = false;
-        other.changeRunSpeed(6.0f);
-        //guy.SetActive(true);
-        //guy2.SetActive(true);
+        player.changeRunSpeed(6.0f);
         isTalking = false;
     }
 
@@ -193,7 +189,7 @@ public class NPC : MonoBehaviour
         ButtonB.SetActive(false);
         ButtonC.SetActive(false);
         sus = susValues.GetCell(0, index);
-        other.moreSus(sus);
+        player.moreSus(sus);
         index = buttonIndexing.GetCell(0, index);
         Debug.Log(index);
 
@@ -214,7 +210,7 @@ public class NPC : MonoBehaviour
         ButtonB.SetActive(false);
         ButtonC.SetActive(false);
         sus = susValues.GetCell(1, index);
-        other.moreSus(sus);
+        player.moreSus(sus);
         index = buttonIndexing.GetCell(1, index);
         Debug.Log(index);
 
@@ -235,7 +231,7 @@ public class NPC : MonoBehaviour
         ButtonB.SetActive(false);
         ButtonC.SetActive(false);
         sus = susValues.GetCell(2, index);
-        other.moreSus(sus);
+        player.moreSus(sus);
         index = buttonIndexing.GetCell(2, index);
         Debug.Log(index);
 
@@ -260,6 +256,44 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = true;
+
+            if(gameObject.tag == "Sec")
+            {
+                if(!player.anim.GetBool("changeSci") && !player.changedSecSprite && !player.changedSci2Sprite || player.changedSecSprite)
+                {
+                    player.susLevel += 100;
+                }
+            }
+
+            else if(gameObject.tag == "Sci2")
+            {
+                if (!player.anim.GetBool("changeSci") && !player.changedSecSprite && !player.changedSci2Sprite || player.changedSci2Sprite)
+                {
+                    player.susLevel += 100;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (gameObject.tag == "Sec")
+            {
+                if (!player.anim.GetBool("changeSci") && !player.changedSecSprite && !player.changedSci2Sprite || player.changedSecSprite)
+                {
+                    player.susLevel += 100;
+                }
+            }
+
+            else if (gameObject.tag == "Sci2")
+            {
+                if (!player.anim.GetBool("changeSci") && !player.changedSecSprite && !player.changedSci2Sprite || player.changedSci2Sprite)
+                {
+                    player.susLevel += 100;
+                }
+            }
         }
     }
 
@@ -270,6 +304,22 @@ public class NPC : MonoBehaviour
         {
             playerIsClose = false;
             zeroText();
+
+            if (gameObject.tag == "Sec")
+            {
+                if (!player.anim.GetBool("changeSci") && !player.changedSecSprite && !player.changedSci2Sprite || player.changedSecSprite)
+                {
+                    player.susLevel += 100;
+                }
+            }
+
+            else if (gameObject.tag == "Sci2")
+            {
+                if (!player.anim.GetBool("changeSci") && !player.changedSecSprite && !player.changedSci2Sprite || player.changedSci2Sprite)
+                {
+                    player.susLevel += 100;
+                }
+            }
         }
     }
 }
