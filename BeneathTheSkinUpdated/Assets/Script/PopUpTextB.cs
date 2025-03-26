@@ -41,7 +41,7 @@ public class PopUpTextB : MonoBehaviour
     public GameObject ButtonC;
     public TMP_Text ButtonCText;
 
-    public float wordSpeed = 0.05f;
+    public float wordSpeed = 0.01f;
     public bool playerIsClose;
     public bool isTriggered = false;
     public int textOptions;
@@ -67,6 +67,7 @@ public class PopUpTextB : MonoBehaviour
             ButtonA.SetActive(false);
             ButtonB.SetActive(false);
             ButtonC.SetActive(false);
+            isTriggered = true;
 
             // Starts typing out the NPC dialogue
             if (TextPanel.activeInHierarchy)
@@ -120,6 +121,7 @@ public class PopUpTextB : MonoBehaviour
         displayText.text = "";
         index = 0;
         TextPanel.SetActive(false);
+        GameObjGroup.SetActive(false);
         //displayText.enabled = false;
         other.changeRunSpeed(6.0f);
     }
@@ -185,15 +187,17 @@ public class PopUpTextB : MonoBehaviour
         other.moreSus(sus);
         index = buttonIndexing.GetCell(0, index);
         Debug.Log(index);
+        Debug.Log(index < textLinesNum);
 
         if (index < textLinesNum)
         {
-
+            Debug.Log("test");
             displayText.text = "";
             StartCoroutine(Typing());
         }
         else
         {
+            Debug.Log("test2");
             zeroText();
         }
     }

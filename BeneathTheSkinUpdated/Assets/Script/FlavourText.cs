@@ -24,7 +24,7 @@ public class FlavourText : MonoBehaviour
     //public Button AButton;
     public TMP_Text ButtonAText;
 
-    public float wordSpeed = 0.05f;
+    public float wordSpeed = 0.01f;
     public bool playerIsClose = false;
     public bool isTriggered = false;
 
@@ -51,6 +51,7 @@ public class FlavourText : MonoBehaviour
             else
             {
                 TextPanel.SetActive(true);
+                GameObjGroup.SetActive(true);
                 displayText.enabled = true;
                 StartCoroutine(Typing());
             }
@@ -71,6 +72,7 @@ public class FlavourText : MonoBehaviour
         index = 0;
         other.changeRunSpeed(6.0f);
         TextPanel.SetActive(false);
+        GameObjGroup.SetActive(false);
         //displayText.enabled = false;
     }
 

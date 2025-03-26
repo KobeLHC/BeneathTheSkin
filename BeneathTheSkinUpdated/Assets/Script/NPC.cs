@@ -39,7 +39,7 @@ public class NPC : MonoBehaviour
     public GameObject ButtonC;
     public TMP_Text ButtonCText;
 
-    public float wordSpeed = 0.001f;
+    public float wordSpeed = 0.01f;
     public bool playerIsClose;
     public int textOptions;
     public int textLinesNum = 0;

@@ -2160,7 +2160,7 @@ MonoBehaviour:
   - There's a sticky note in the trash bin. It has "1234" written down on it.
   ButtonA: {fileID: 2011042879}
   ButtonAText: {fileID: 1724578553}
-  wordSpeed: 0.05
+  wordSpeed: 0.01
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &127497314
@@ -2673,7 +2673,7 @@ MonoBehaviour:
   ButtonBText: {fileID: 1346106385}
   ButtonC: {fileID: 1082466269}
   ButtonCText: {fileID: 189870985}
-  wordSpeed: 0.001
+  wordSpeed: 0.01
   playerIsClose: 0
   textOptions: 0
   textLinesNum: 4
@@ -3684,7 +3684,7 @@ MonoBehaviour:
   - You should give this to Jerry.
   ButtonA: {fileID: 2011042879}
   ButtonAText: {fileID: 1724578553}
-  wordSpeed: 0.05
+  wordSpeed: 0.01
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &242174048
@@ -4525,7 +4525,7 @@ MonoBehaviour:
   ButtonBText: {fileID: 1364034352}
   ButtonC: {fileID: 792216751}
   ButtonCText: {fileID: 434822683}
-  wordSpeed: 0.001
+  wordSpeed: 0.01
   playerIsClose: 0
   isTriggered: 0
   textOptions: 0
@@ -6867,7 +6867,7 @@ Transform:
   m_GameObject: {fileID: 428892985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6, y: -7.28, z: -10}
+  m_LocalPosition: {x: 17.32, y: 5.05, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7646,7 +7646,7 @@ MonoBehaviour:
     it interacted with.
   ButtonA: {fileID: 2011042879}
   ButtonAText: {fileID: 1724578553}
-  wordSpeed: 0.05
+  wordSpeed: 0.01
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &461792320
@@ -8752,7 +8752,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6018782, y: -6.1762404, z: -10}
+  m_LocalPosition: {x: 17.32, y: 5.05, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19251,7 +19251,7 @@ MonoBehaviour:
   ButtonBText: {fileID: 1626290187}
   ButtonC: {fileID: 1226852094}
   ButtonCText: {fileID: 70458281}
-  wordSpeed: 0.001
+  wordSpeed: 0.01
   playerIsClose: 0
   textOptions: 0
   textLinesNum: 4
@@ -23428,13 +23428,13 @@ MonoBehaviour:
       - Amogus
       - 
     - row:
-      - '@ Oh. Those test tubes over there were gathered from the alien thing. I
-        think they might be able to melt metal.'
+      - '@Oh. Those test tubes over there were gathered from the alien thing. I think
+        they might be able to melt metal.'
       - Oh, that's good to know.
       - 
       - 
     - row:
-      - What?
+      - '@What?'
       - ...
       - 
       - 
@@ -23467,7 +23467,7 @@ MonoBehaviour:
   ButtonBText: {fileID: 2001987011}
   ButtonC: {fileID: 817281470}
   ButtonCText: {fileID: 415343289}
-  wordSpeed: 0.001
+  wordSpeed: 0.01
   playerIsClose: 0
   textOptions: 0
   textLinesNum: 3
@@ -24510,7 +24510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Jerry
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26888,7 +26888,7 @@ Transform:
   m_GameObject: {fileID: 2039526034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6, y: -7.28, z: 0}
+  m_LocalPosition: {x: 17.32, y: 5.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28354,7 +28354,7 @@ MonoBehaviour:
   - I'm in the stall at the end!
   ButtonA: {fileID: 2131634044}
   ButtonAText: {fileID: 646365248}
-  wordSpeed: 0.05
+  wordSpeed: 0.01
   playerIsClose: 0
   isTriggered: 0
 --- !u!212 &2118277142

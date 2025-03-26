@@ -22,7 +22,7 @@ public class PopUpTextNB : MonoBehaviour
     public GameObject ButtonA;
     public TMP_Text ButtonAText;
 
-    public float wordSpeed = 0.05f;
+    public float wordSpeed = 0.01f;
     public bool playerIsClose = false;
     public bool isTriggered = false;
 
@@ -49,6 +49,7 @@ public class PopUpTextNB : MonoBehaviour
             else
             {
                 TextPanel.SetActive(true);
+                GameObjGroup.SetActive(true);
                 displayText.enabled = true;
                 StartCoroutine(Typing());
             }
@@ -69,6 +70,7 @@ public class PopUpTextNB : MonoBehaviour
         index = 0;
         other.changeRunSpeed(6.0f);
         TextPanel.SetActive(false);
+        GameObjGroup.SetActive(false);
         //displayText.enabled = false;
     }
 
