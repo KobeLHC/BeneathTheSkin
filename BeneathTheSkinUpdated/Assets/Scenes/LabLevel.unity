@@ -4746,7 +4746,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325815248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5380,6 +5380,7 @@ MonoBehaviour:
   destroyObjectChem: {fileID: 456186798}
   other: {fileID: 2039526035}
   finishedPuzzle: 0
+  susMeter: {fileID: 490168327}
 --- !u!4 &346006301
 Transform:
   m_ObjectHideFlags: 0
@@ -6943,7 +6944,7 @@ Transform:
   m_GameObject: {fileID: 428892985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.99, y: -0.59, z: -10}
+  m_LocalPosition: {x: -2.5, y: -0.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7599,6 +7600,7 @@ MonoBehaviour:
   other: {fileID: 2039526035}
   chemicalScene: {fileID: 1137618091}
   playerIsClose: 0
+  susMeter: {fileID: 490168327}
 --- !u!114 &456186805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8255,7 +8257,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490168327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 2.21875, y: 2.21875, z: 2.21875}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8935,7 +8937,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.99, y: -0.59, z: -10}
+  m_LocalPosition: {x: -2.5, y: -0.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23929,7 +23931,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 34f6d048ef286400aa8c45bc3e9589de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24120,8 +24122,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000052452, y: 0.00077282}
-  m_SizeDelta: {x: 800, y: 450.36}
+  m_AnchoredPosition: {x: 0.0000052452, y: 0.000073671}
+  m_SizeDelta: {x: 800, y: 461.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1821028350
 CanvasRenderer:
@@ -27053,7 +27055,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -189942388, guid: 9179b86a0cb6b4e0aa276335cd49dff7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27074,7 +27076,7 @@ Transform:
   m_GameObject: {fileID: 2039526034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.99, y: -0.59, z: 0}
+  m_LocalPosition: {x: -2.5, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

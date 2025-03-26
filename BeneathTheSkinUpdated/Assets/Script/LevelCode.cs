@@ -14,6 +14,8 @@ public class LevelCode : MonoBehaviour
     //End game control
     public bool finishedPuzzle;
 
+    public GameObject susMeter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class LevelCode : MonoBehaviour
             chemicalScene.SetActive(false);
             other.changeRunSpeed(6.0f);
             finishedPuzzle = true;
+            susMeter.SetActive(true);
             Destroy(destroyObjectChem);
         }
     }

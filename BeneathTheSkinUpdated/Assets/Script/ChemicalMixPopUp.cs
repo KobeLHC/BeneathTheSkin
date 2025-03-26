@@ -10,6 +10,7 @@ public class ChemicalMixPopUp : MonoBehaviour
     //In use
     public GameObject chemicalScene;
     public bool playerIsClose;
+    public GameObject susMeter;
 
     void Start()
     {
@@ -23,6 +24,8 @@ public class ChemicalMixPopUp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null/*&& other.GetAnimator().GetBool("___") == true*/)
         {
             chemicalScene.SetActive(true);
+            susMeter.SetActive(false);
+            
         }
 
         if (chemicalScene.active)
