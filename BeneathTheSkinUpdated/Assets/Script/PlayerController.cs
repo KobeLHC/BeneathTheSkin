@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     // Player Animation controller
     public bool changedSecSprite;
     public bool changedSci2Sprite;
+    public bool resetedSprite;
 
     //Sound effect control
     AudioManager audioManager;
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
         isWalking = false;
         changedSecSprite = false;
         changedSci2Sprite = false;
+        resetedSprite = true;
     }
 
     void Update()
@@ -134,6 +136,16 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("sci2Left", moveLeft);
             anim.SetBool("sci2Right", moveRight);
             anim.SetBool("sci2Down", moveDown);
+        }
+
+        //Changing back to buddy animation
+        if (resetedSprite)
+        {
+            //No need to set Idle condition
+            anim.SetBool("moveUp", moveUp);
+            anim.SetBool("moveDown", moveDown);
+            anim.SetBool("moveRight", moveRight);
+            anim.SetBool("moveLeft", moveLeft);
         }
 
         // Gives a value between -1 and 1
@@ -241,6 +253,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = newSprite2;
             changedSecSprite = true;
             changedSci2Sprite = false;
+            resetedSprite = false;
             ResetAllAnimations();
             //Debug.Log("changedSecSprite true");
         }
@@ -264,6 +277,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = newSprite3;
             changedSci2Sprite = true;
             changedSecSprite = false;
+            resetedSprite = false;
             ResetAllAnimations();
             //Debug.Log("changedSci2Sprite true");
         }
@@ -319,6 +333,9 @@ public class PlayerController : MonoBehaviour
 
         //Jerry anim bool
         anim.SetBool("changeSci", false);
+
+        //Setting back Buddy animation
+        resetedSprite = true;
     }
 
     public Animator GetAnimator()

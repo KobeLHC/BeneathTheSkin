@@ -9,6 +9,7 @@ public class MeterController : MonoBehaviour
 
     //sprite control
     private SpriteRenderer spriteRenderer;
+    public Sprite startSus;
     public Sprite lowSus;
     public Sprite midSus;
     public Sprite highSus;
@@ -31,7 +32,7 @@ public class MeterController : MonoBehaviour
     {
         if (playerObject.susLevel == 0)
         {
-            // Do nothing
+            spriteRenderer.sprite = startSus;
         }
 
         else if (playerObject.susLevel > 0 && playerObject.susLevel < 50)

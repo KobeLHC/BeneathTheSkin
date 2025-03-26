@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58fc6c387c9764fb48b5f6d540d3d228
+guid: 300de2e8628c44f53a74322943de674c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buddy_strut_0
+      name: buddy_frontWalk_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 10
-        width: 52
-        height: 53
+        x: 2
+        y: 7
+        width: 55
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 255ad689ff2cc4e6f8352dd170559eb7
-      internalID: -405236159
+      spriteID: 030d376e875f6499ab4a523a79d4aa9b
+      internalID: 1144117565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buddy_strut_1
+      name: buddy_frontWalk_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 10
-        width: 52
-        height: 53
+        x: 70
+        y: 7
+        width: 55
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2869cf85130d149609c641c4ac7b3b32
-      internalID: -1810810887
+      spriteID: 0bbe5ade5e2f3424b83f75a56f6af911
+      internalID: 738311332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buddy_strut_2
+      name: buddy_frontWalk_2
       rect:
         serializedVersion: 2
-        x: 145
-        y: 10
-        width: 52
-        height: 53
+        x: 139
+        y: 7
+        width: 55
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca3387d84765f4116997bc88f18b2c6d
-      internalID: -1722562887
+      spriteID: 9129c4f459b084d88af1d3c5d186b482
+      internalID: -1885111995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buddy_strut_3
+      name: buddy_frontWalk_3
       rect:
         serializedVersion: 2
-        x: 208
-        y: 10
-        width: 52
-        height: 53
+        x: 200
+        y: 7
+        width: 55
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,92 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cb5edd9745ab4dc5882f56c7f6ecd04
-      internalID: -196438664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buddy_strut_4
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 10
-        width: 52
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f856f4b5467da46cb920e4c080b41631
-      internalID: 1727885032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buddy_strut_5
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 10
-        width: 52
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3c07b08600bd4b8f8d7a78de239734d
-      internalID: 1875567372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buddy_strut_6
-      rect:
-        serializedVersion: 2
-        x: 405
-        y: 10
-        width: 52
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d48395c3b8444af4a9c0d40b9b2a776
-      internalID: 442882716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buddy_strut_7
-      rect:
-        serializedVersion: 2
-        x: 467
-        y: 10
-        width: 52
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae4a75798688d45ff92b9db75af7cab8
-      internalID: 41262812
+      spriteID: dabdbc1e4b19b4de4841410c1b873301
+      internalID: -45771768
       vertices: []
       indices: 
       edges: []
@@ -288,14 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      buddy_strut_0: -405236159
-      buddy_strut_1: -1810810887
-      buddy_strut_2: -1722562887
-      buddy_strut_3: -196438664
-      buddy_strut_4: 1727885032
-      buddy_strut_5: 1875567372
-      buddy_strut_6: 442882716
-      buddy_strut_7: 41262812
+      buddy_frontWalk_0: 1144117565
+      buddy_frontWalk_1: 738311332
+      buddy_frontWalk_2: -1885111995
+      buddy_frontWalk_3: -45771768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
-        Debug.Log("SFX played");
+        //Debug.Log("SFX played");
     }
 
     public void LoopSFX(AudioClip clip)
@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
             SFXSource.clip = clip;
             SFXSource.loop = true;
             SFXSource.Play();
-            Debug.Log("Looping SFX started");
+            //Debug.Log("Looping SFX started");
         }
     }
 
@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
             SFXSource.Stop();
             SFXSource.loop = false;
             SFXSource.clip = null;
-            Debug.Log("Looping SFX stopped");
+            //Debug.Log("Looping SFX stopped");
         }
     }
 }
