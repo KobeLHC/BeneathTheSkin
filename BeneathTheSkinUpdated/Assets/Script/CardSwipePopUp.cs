@@ -8,6 +8,8 @@ public class CardSwipePopUp : MonoBehaviour
     public GameObject cardSwipe;
     public bool playerIsClose;
     public GameObject warningPrompt;
+    public ChemicalMixPopUp chemClose;
+    public EnterPasswordSystem passClose;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +21,14 @@ public class CardSwipePopUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerIsClose == false)
+        if (!playerIsClose && !chemClose.playerIsClose && !passClose.playerInZone)
         {
             warningPrompt.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && other.GetAnimator().GetBool("changeSci") == true)
         {
+            warningPrompt.SetActive(false);
             cardSwipe.SetActive(true);
         }
 
@@ -33,12 +36,7 @@ public class CardSwipePopUp : MonoBehaviour
         {
             warningPrompt.SetActive(true);
         }
-
-        if(playerIsClose == false)
-        {
-            warningPrompt.SetActive(false);
-        }
-
+  
         if (cardSwipe.active)
         {
             other.changeRunSpeed(0.0f);

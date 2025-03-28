@@ -17,18 +17,37 @@ public class EnterPasswordSystem : MonoBehaviour
     //End game control
     public bool finishedPuzzle;
 
+    //promp control
+    public GameObject warningPrompt;
+    public PlayerController playerObject;
+    public CardSwipePopUp cardClose;
+    public ChemicalMixPopUp chemClose;
+
     void Start()
     {
         passwordPanel.SetActive(false); // Hide the password UI initially
         submitButton.onClick.AddListener(CheckPassword); // Attach function to button
         finishedPuzzle = false;
+        warningPrompt.SetActive(false);
+        playerObject = player.GetComponent<PlayerController>();
     }
 
     void Update()
     {
-        if (playerInZone && !isPasswordUIOpen && Input.GetKeyDown(KeyCode.Space))
+        if (!playerInZone && !cardClose.playerIsClose && !chemClose.playerIsClose)
         {
+            warningPrompt.SetActive(false);
+        }
+
+        if (playerInZone && !isPasswordUIOpen && Input.GetKeyDown(KeyCode.Space) && playerObject.changedSecSprite == true)
+        {
+            warningPrompt.SetActive(false);
             ShowPasswordUI();
+        }
+
+        if(playerInZone && !isPasswordUIOpen && Input.GetKeyDown(KeyCode.Space) && playerObject.changedSecSprite == false)
+        {
+            warningPrompt.SetActive(true);
         }
     }
 

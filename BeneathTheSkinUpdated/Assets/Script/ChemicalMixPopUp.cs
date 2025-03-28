@@ -11,21 +11,36 @@ public class ChemicalMixPopUp : MonoBehaviour
     public GameObject chemicalScene;
     public bool playerIsClose;
     public GameObject susMeter;
+    public GameObject warningPrompt;
+    public CardSwipePopUp cardClose;
+    public EnterPasswordSystem passClose;
 
     void Start()
     {
         chemicalScene.SetActive(false);
+        warningPrompt.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /// Comment out part is for when we want to add condition like buddy change into someone to active the chemcial mix
-        if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null/*&& other.GetAnimator().GetBool("___") == true*/)
+        if (!playerIsClose && !cardClose.playerIsClose && !passClose.playerInZone)
         {
+            warningPrompt.SetActive(false);
+        }
+
+        // only jerry and sci2 sprite can turn on chemical mixing puzzle
+        if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null && other.changedSci2Sprite == true || Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null && other.GetAnimator().GetBool("changeSci") == true)
+        {
+            warningPrompt.SetActive(false);
             chemicalScene.SetActive(true);
             susMeter.SetActive(false);
             
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null && other.changedSci2Sprite == false && other.GetAnimator().GetBool("changeSci") == false)
+        {
+            warningPrompt.SetActive(true);
         }
 
         if (chemicalScene.active)
