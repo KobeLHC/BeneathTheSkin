@@ -21888,6 +21888,7 @@ MonoBehaviour:
   background: {fileID: 8300000, guid: 0b6d3c82ab1f542a58a9d415c7ea52ae, type: 3}
   clicking: {fileID: 8300000, guid: 21a783c8a67524b8ea220b324103a876, type: 3}
   walking: {fileID: 8300000, guid: 9ff147c0a43b74c8dbb3a356cfb58aa3, type: 3}
+  losing: {fileID: 8300000, guid: e9581ed9b571e417486214e7029ca011, type: 3}
 --- !u!4 &1647815871
 Transform:
   m_ObjectHideFlags: 0
