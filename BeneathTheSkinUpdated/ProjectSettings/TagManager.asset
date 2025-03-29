@@ -11,6 +11,7 @@ TagManager:
   - Sci2
   - Audio
   - tp
+  - Selectable
   layers:
   - Default
   - TransparentFX

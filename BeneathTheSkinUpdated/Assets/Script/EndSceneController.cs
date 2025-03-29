@@ -23,6 +23,9 @@ public class EndSceneController : MonoBehaviour
     public bool chemicalDone;
     public int playerLose;
 
+    //Output to final gate script
+    public bool solved;
+
     void Start()
     {
         //Getting component at start
@@ -30,6 +33,7 @@ public class EndSceneController : MonoBehaviour
         passwordObject = passwordPuzzle.GetComponent<EnterPasswordSystem>();
         chemicalObject = chemicalPuzzle.GetComponent<LevelCode>();
         playerObject = player.GetComponent<PlayerController>();
+        solved = false;
     }
 
     void Update()
@@ -39,6 +43,12 @@ public class EndSceneController : MonoBehaviour
         passwordDone = passwordObject.getCondition();
         chemicalDone = chemicalObject.getCondition();
         playerLose = playerObject.susLevel;
+
+        //if all puzzle solved then send true to final gate script
+        if(cardDone && passwordDone && chemicalDone)
+        {
+            solved = true;
+        }       
 
         if(playerLose >= 100)
         {

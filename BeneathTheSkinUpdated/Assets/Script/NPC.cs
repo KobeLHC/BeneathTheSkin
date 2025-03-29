@@ -50,11 +50,13 @@ public class NPC : MonoBehaviour
     //public int randMax = 8;
 
     public GameObject pressCUI;
+    public GameObject interactPrompt;
 
 
     void Start()
     {
         pressCUI.SetActive(false);
+        interactPrompt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class NPC : MonoBehaviour
             ButtonB.SetActive(false);
             ButtonC.SetActive(false);
             isTalking = true;
+            interactPrompt.SetActive(false);
 
             // Starts typing out the NPC dialogue
             if (TextPanel.activeInHierarchy)
@@ -257,6 +260,8 @@ public class NPC : MonoBehaviour
     // Checks if player is close enough to interact with NPC
     private void OnTriggerEnter2D(Collider2D other)
     {
+        interactPrompt.SetActive(true);
+
         if (other.CompareTag("Player"))
         {
             playerIsClose = true;
@@ -304,6 +309,7 @@ public class NPC : MonoBehaviour
     //Checks if player has left the detection range for interaction.
     private void OnTriggerExit2D(Collider2D other)
     {
+        interactPrompt.SetActive(false);
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;

@@ -14,6 +14,7 @@ public class ChemicalMixPopUp : MonoBehaviour
     public GameObject warningPrompt;
     public CardSwipePopUp cardClose;
     public EnterPasswordSystem passClose;
+    public GameObject pressCUI;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class ChemicalMixPopUp : MonoBehaviour
             warningPrompt.SetActive(false);
             chemicalScene.SetActive(true);
             susMeter.SetActive(false);
-            
+            pressCUI.SetActive(false);
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && playerIsClose && gameObject != null && other.changedSci2Sprite == false && other.GetAnimator().GetBool("changeSci") == false)

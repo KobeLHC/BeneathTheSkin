@@ -13,7 +13,7 @@ public class LevelCode : MonoBehaviour
 
     //End game control
     public bool finishedPuzzle;
-
+    public GameObject pressCUI;
     public GameObject susMeter;
 
     // Start is called before the first frame update
@@ -32,6 +32,7 @@ public class LevelCode : MonoBehaviour
             other.changeRunSpeed(6.0f);
             finishedPuzzle = true;
             susMeter.SetActive(true);
+            pressCUI.SetActive(true);
             Destroy(destroyObjectChem);
         }
     }
