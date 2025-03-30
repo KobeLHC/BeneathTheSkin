@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8852,12 +8851,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -29027,7 +29026,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 952760682}
         m_TargetAssemblyTypeName: FlavourText, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
@@ -29195,7 +29194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceLeft: {x: 0, y: 0}
-  runSpeed: 4
+  runSpeed: 5
   susLevel: 0
   newSprite: {fileID: 163357713, guid: 4f0afd0464770484e9e135cca2ee59d3, type: 3}
   newSprite2: {fileID: 546514216, guid: 1952a887876c74e88bb6667540f8d0d1, type: 3}
