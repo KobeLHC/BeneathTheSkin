@@ -15,7 +15,7 @@ public class FinalGate : MonoBehaviour
     //Broken Gate Sprite and variable from EndSceneManager
     public GameObject finalPrompt;
     public EndSceneController end;
-    //public Sprite brokenGate;
+    public Sprite brokenGate;
 
     //Sound effect control
     AudioManager audioManager;
@@ -35,10 +35,10 @@ public class FinalGate : MonoBehaviour
     void Update()
     {
 
-        //if (end.solved)
-        //{
-        //    spriteRenderer.sprite = brokenGate;
-        //}
+        if (end.solved)
+        {
+            spriteRenderer.sprite = brokenGate;
+        }
 
         if (playerIsNear && Input.GetKeyDown(KeyCode.Space))
         {
