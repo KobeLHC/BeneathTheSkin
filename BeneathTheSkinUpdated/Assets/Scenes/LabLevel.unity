@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2969,7 +2970,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.7183275, y: -1.6796489}
-  - {x: 3.3909922, y: 0.9019394}
+  - {x: 3.3699627, y: 0.77576613}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -3567,6 +3568,7 @@ GameObject:
   - component: {fileID: 209818037}
   - component: {fileID: 209818040}
   - component: {fileID: 209818039}
+  - component: {fileID: 209818041}
   m_Layer: 0
   m_Name: brokenTestTube
   m_TagString: Selectable
@@ -3701,6 +3703,29 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 52c408238a4b04c18a1afff3c3c76b5a, type: 3}
   interactSprite: {fileID: 21300000, guid: 62c97be0ac7df40e799bd4bd3a4f6d7d, type: 3}
+--- !u!114 &209818041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209818036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - Looks like it was haphazardly put together with tape.
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &233924460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5666,7 +5691,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.7183275, y: -1.6796489}
-  - {x: 8.353964, y: 3.6171527}
+  - {x: 8.2516775, y: 3.5514731}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -6661,8 +6686,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.7183275, y: -1.6796489}
-  - {x: 8.353964, y: 3.6171527}
+  - {x: -0.6093607, y: -1.3527478}
+  - {x: 8.172353, y: 3.7261195}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -6679,6 +6704,7 @@ GameObject:
   - component: {fileID: 411266097}
   - component: {fileID: 411266100}
   - component: {fileID: 411266099}
+  - component: {fileID: 411266101}
   m_Layer: 0
   m_Name: bookshelf
   m_TagString: Selectable
@@ -6813,6 +6839,29 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 3a9abcd6dec0144739ea38a2830ad572, type: 3}
   interactSprite: {fileID: 21300000, guid: 5561380104dc84980b0461621142899f, type: 3}
+--- !u!114 &411266101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411266096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - '#012'
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &411425190
 GameObject:
   m_ObjectHideFlags: 0
@@ -7162,7 +7211,7 @@ Transform:
   m_GameObject: {fileID: 428892985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.45, y: 16.74, z: -10.1}
+  m_LocalPosition: {x: -16.62, y: -2.51, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8851,12 +8900,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -8917,7 +8966,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.45, y: 16.74, z: -10.1}
+  m_LocalPosition: {x: -14.810641, y: -2.5098403, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9614,6 +9663,7 @@ GameObject:
   - component: {fileID: 592107700}
   - component: {fileID: 592107703}
   - component: {fileID: 592107702}
+  - component: {fileID: 592107704}
   m_Layer: 0
   m_Name: bulletin
   m_TagString: Selectable
@@ -9748,6 +9798,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 1.2}
   m_EdgeRadius: 0
+--- !u!114 &592107704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592107699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - 'You understand a little bit of what''s on these notes: there are only three
+    officers lined up for the night shift, two lab staff and one security.'
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &593138485
 GameObject:
   m_ObjectHideFlags: 0
@@ -14454,8 +14528,8 @@ Transform:
   m_GameObject: {fileID: 953730507}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.18, y: 5.0246, z: 0.39610875}
-  m_LocalScale: {x: 0.07909458, y: 2.6406395, z: 1}
+  m_LocalPosition: {x: 29.1329, y: 5.1195, z: 0.39610875}
+  m_LocalScale: {x: 0.17327829, y: 2.83047, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698674639}
@@ -14637,6 +14711,7 @@ GameObject:
   - component: {fileID: 957377507}
   - component: {fileID: 957377506}
   - component: {fileID: 957377505}
+  - component: {fileID: 957377509}
   m_Layer: 0
   m_Name: boot
   m_TagString: Selectable
@@ -14771,6 +14846,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1560256704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957377509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957377504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - '#003 - A boot that occasionally glows.'
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &960423316
 GameObject:
   m_ObjectHideFlags: 0
@@ -17068,6 +17166,7 @@ GameObject:
   - component: {fileID: 1132308344}
   - component: {fileID: 1132308346}
   - component: {fileID: 1132308345}
+  - component: {fileID: 1132308347}
   m_Layer: 0
   m_Name: newspaper
   m_TagString: Selectable
@@ -17202,6 +17301,30 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 78eab9ae749a342e2a5ac626cda9a4d8, type: 3}
   interactSprite: {fileID: 21300000, guid: 4cb4317feb3714166a53c2b3b5064e14, type: 3}
+--- !u!114 &1132308347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132308342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - 'LOCAL NEWS: blablablablabla'
+  - blablablabla
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &1137618091
 GameObject:
   m_ObjectHideFlags: 0
@@ -20099,8 +20222,8 @@ Transform:
   m_GameObject: {fileID: 1391630227}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.75, y: -1.9800001, z: 0.39610875}
-  m_LocalScale: {x: 0.23569384, y: 1.4628311, z: 1}
+  m_LocalPosition: {x: 2.75, y: -1.8486, z: 0.39610875}
+  m_LocalScale: {x: 0.23569384, y: 1.7257019, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1197830014}
@@ -21275,6 +21398,7 @@ GameObject:
   - component: {fileID: 1495825248}
   - component: {fileID: 1495825251}
   - component: {fileID: 1495825250}
+  - component: {fileID: 1495825252}
   m_Layer: 0
   m_Name: rock
   m_TagString: Selectable
@@ -21409,6 +21533,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &1495825252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495825247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - '#012'
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &1502138859
 GameObject:
   m_ObjectHideFlags: 0
@@ -23066,8 +23213,8 @@ Transform:
   m_GameObject: {fileID: 1654094716}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.599, y: 3.289, z: 0.39610875}
-  m_LocalScale: {x: 0.23569384, y: 1.4628311, z: 1}
+  m_LocalPosition: {x: 6.599, y: 3.2288, z: 0.39610875}
+  m_LocalScale: {x: 0.23569384, y: 1.5832217, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 759790304}
@@ -23347,6 +23494,7 @@ GameObject:
   - component: {fileID: 1660658070}
   - component: {fileID: 1660658069}
   - component: {fileID: 1660658071}
+  - component: {fileID: 1660658072}
   m_Layer: 0
   m_Name: journals
   m_TagString: Untagged
@@ -23481,6 +23629,31 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 2adf2dd518409496b98d9349165cb73c, type: 3}
   interactSprite: {fileID: 21300000, guid: de2692449f80747c59a981c5214564c4, type: 3}
+--- !u!114 &1660658072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660658066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - 05/17/02 04:16AM
+  - This vessel appears to be able to be powered by regular batteries.
+  - I'm surprised that something from so far out there could have such similar technology.
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &1675906316
 GameObject:
   m_ObjectHideFlags: 0
@@ -24483,8 +24656,8 @@ Transform:
   m_GameObject: {fileID: 1757251206}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.019, y: 9.696, z: 0.39610875}
-  m_LocalScale: {x: 0.40084395, y: 4.0058246, z: 1}
+  m_LocalPosition: {x: 29.019, y: 9.6536, z: 0.39610875}
+  m_LocalScale: {x: 0.40084395, y: 4.090748, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698674639}
@@ -25870,6 +26043,7 @@ GameObject:
   - component: {fileID: 1837489827}
   - component: {fileID: 1837489830}
   - component: {fileID: 1837489829}
+  - component: {fileID: 1837489831}
   m_Layer: 0
   m_Name: filingCabinet
   m_TagString: Selectable
@@ -26004,6 +26178,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.45}
   m_EdgeRadius: 0
+--- !u!114 &1837489831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837489826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - There's a sweet fragrance coming from the bottom cabinet.
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &1838393807
 GameObject:
   m_ObjectHideFlags: 0
@@ -27070,8 +27267,8 @@ Transform:
   m_GameObject: {fileID: 1865766793}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7035, y: 0.426, z: 0.39610875}
-  m_LocalScale: {x: 0.019599749, y: 1.4628311, z: 1}
+  m_LocalPosition: {x: 6.66, y: 0.4819, z: 0.39610875}
+  m_LocalScale: {x: 0.11816313, y: 1.3967112, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 759790304}
@@ -28541,6 +28738,7 @@ GameObject:
   - component: {fileID: 1994925726}
   - component: {fileID: 1994925725}
   - component: {fileID: 1994925724}
+  - component: {fileID: 1994925728}
   m_Layer: 0
   m_Name: skull
   m_TagString: Selectable
@@ -28675,6 +28873,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1560256704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1994925728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994925723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - '#005'
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
 --- !u!1 &2001987009
 GameObject:
   m_ObjectHideFlags: 0
@@ -29299,7 +29520,7 @@ Transform:
   m_GameObject: {fileID: 2039526034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.45, y: 16.74, z: -0.1}
+  m_LocalPosition: {x: -16.62, y: -2.51, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29594,8 +29815,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.7183275, y: -1.6796489}
-  - {x: 3.3909922, y: 0.9019394}
+  - {x: -0.67626953, y: -1.3642159}
+  - {x: 3.2906017, y: 0.9253457}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
