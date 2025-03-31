@@ -23,6 +23,9 @@ public class EnterPasswordSystem : MonoBehaviour
     public CardSwipePopUp cardClose;
     public ChemicalMixPopUp chemClose;
 
+    //Door control
+    public GameObject door;
+
     void Start()
     {
         passwordPanel.SetActive(false); // Hide the password UI initially
@@ -82,6 +85,7 @@ public class EnterPasswordSystem : MonoBehaviour
             passwordPanel.SetActive(false);
             isPasswordUIOpen = false;
             Debug.Log("Correct password entered!");
+            Destroy(door);
             screenshotDisplay.ShowScreenshot(); // Show screenshot after correct password
         }
         else
