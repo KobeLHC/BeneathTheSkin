@@ -12,6 +12,7 @@ TagManager:
   - Audio
   - tp
   - Selectable
+  - Bulletin
   layers:
   - Default
   - TransparentFX

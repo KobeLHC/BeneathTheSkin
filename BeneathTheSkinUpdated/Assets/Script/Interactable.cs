@@ -15,6 +15,9 @@ public class Interactable : MonoBehaviour
     //Sound effect control
     AudioManager audioManager;
 
+    //Special Object
+    public GameObject specialObject;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -24,6 +27,17 @@ public class Interactable : MonoBehaviour
     {
         interactPrompt.SetActive(false);
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if(specialObject == null)
+        {
+            // Do nothing
+        }
+
+        else
+        {
+            specialObject.SetActive(false);
+        }
+        
     }
 
     void Update()
@@ -34,6 +48,11 @@ public class Interactable : MonoBehaviour
             audioManager.PlaySFX(audioManager.clicking);
             interactPrompt.SetActive(false);
             spriteRenderer.sprite = basicSprite;
+
+            if(gameObject.tag == "Bulletin")
+            {
+                specialObject.SetActive(true);
+            }
         }
     }
 
@@ -56,6 +75,11 @@ public class Interactable : MonoBehaviour
             playerIsNear = false;
             interactPrompt.SetActive(false);
             spriteRenderer.sprite = basicSprite;
+
+            if(gameObject.tag == "Bulletin")
+            {
+                specialObject.SetActive(false);
+            }
         }
     }
 }
