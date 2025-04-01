@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2646,7 +2647,7 @@ MonoBehaviour:
   textLinesNum: 4
   textIsDone: 0
   isTalking: 0
-  pressCUI: {fileID: 1931863704}
+  pressCUIOn: 0
   interactPrompt: {fileID: 467626695}
 --- !u!61 &156566855
 BoxCollider2D:
@@ -9394,12 +9395,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -9460,7 +9461,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.933769, y: -2.9897902, z: -10.1}
+  m_LocalPosition: {x: -14.789015, y: -2.9897902, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13469,7 +13470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -18, y: 25}
+  m_AnchoredPosition: {x: -18, y: 35}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799788361
@@ -13495,7 +13496,7 @@ MonoBehaviour:
   m_text: WINNING CONDITION NOT FULFIL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 834610e4bcd382149b7b06a94e6c032e, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 6485750690641401940, guid: 834610e4bcd382149b7b06a94e6c032e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13519,8 +13520,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15908,7 +15909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &960423317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19515,7 +19516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 25}
+  m_AnchoredPosition: {x: 0, y: 35.6}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220613982
@@ -19541,7 +19542,7 @@ MonoBehaviour:
   m_text: FACE VERIFICATION REQUIRED
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 834610e4bcd382149b7b06a94e6c032e, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 6485750690641401940, guid: 834610e4bcd382149b7b06a94e6c032e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19565,8 +19566,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -21860,7 +21861,7 @@ MonoBehaviour:
   textLinesNum: 4
   textIsDone: 0
   isTalking: 0
-  pressCUI: {fileID: 1931863704}
+  pressCUIOn: 0
   interactPrompt: {fileID: 1182986624}
 --- !u!1 &1391630227
 GameObject:
@@ -26766,7 +26767,7 @@ MonoBehaviour:
   textLinesNum: 3
   textIsDone: 0
   isTalking: 0
-  pressCUI: {fileID: 1931863704}
+  pressCUIOn: 0
   interactPrompt: {fileID: 467626695}
 --- !u!1 &1766336390
 GameObject:
@@ -27579,7 +27580,7 @@ MonoBehaviour:
   m_text: Press SPACE to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 834610e4bcd382149b7b06a94e6c032e, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 6485750690641401940, guid: 834610e4bcd382149b7b06a94e6c032e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -27603,8 +27604,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -29600,13 +29601,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1931863706}
   - component: {fileID: 1931863705}
+  - component: {fileID: 1931863707}
   m_Layer: 5
   m_Name: Press C UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1931863705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29648,7 +29650,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 69a711a239a9e4a9984a2e0a02e3ce48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25ff0373aedcf4d9bbf49c7b3092f934, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -29675,9 +29677,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.71, y: 2.71}
+  m_AnchoredPosition: {x: 1.02, y: 2.64}
   m_SizeDelta: {x: 260, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1931863707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931863704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34db96fc91634132b297aa7d49fdb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressCUIOn: {fileID: 21300000, guid: 3e75c660fbccf4ccf82d060cc6d309e9, type: 3}
+  trigger: {fileID: 156566854}
 --- !u!1 &1933909137
 GameObject:
   m_ObjectHideFlags: 0

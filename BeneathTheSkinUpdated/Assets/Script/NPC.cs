@@ -49,23 +49,23 @@ public class NPC : MonoBehaviour
     //public int randNum = 0;
     //public int randMax = 8;
 
-    public GameObject pressCUI;
+    public bool pressCUIOn;
     public GameObject interactPrompt;
 
 
     void Start()
     {
-        pressCUI.SetActive(false);
+        pressCUIOn = false;
         interactPrompt.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Jerry controlling the pressC UI
-        if(gameObject.tag == "Sci" && isTalking)
+        //Jerry controlling the pressC UI On
+        if (gameObject.tag == "Sci" && isTalking)
         {
-            pressCUI.SetActive(true);
+            pressCUIOn = true;
         }
 
         // Checks if the player interacted with NPC (checks for player input and if close enough)
