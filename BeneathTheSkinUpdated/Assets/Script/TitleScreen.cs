@@ -15,6 +15,6 @@ public class TitleScreen : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("TitleScreen");
+        SceneManager.LoadScene("LabLevel");
     }
 }
