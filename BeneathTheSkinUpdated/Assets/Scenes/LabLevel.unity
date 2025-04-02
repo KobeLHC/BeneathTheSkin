@@ -2602,8 +2602,8 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - 
-      - 
+      - '@There should be toilet paper by the sink.'
+      - ...
       - 
       - 
     - row:
@@ -2629,10 +2629,10 @@ MonoBehaviour:
     cellSize: {x: 32, y: 16}
     cells:
     - row: 040000000000000000000000
+    - row: 040000000000000000000000
     - row: 000000000000000000000000
     - row: 000000000000000000000000
-    - row: 000000000000000000000000
-  index: 0
+  index: 1
   sus: 0
   ButtonA: {fileID: 156307733}
   ButtonAText: {fileID: 1743748376}
@@ -9454,7 +9454,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.718015, y: -2.6697602, z: -10.1}
+  m_LocalPosition: {x: -14.453747, y: -2.6697602, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21810,45 +21810,67 @@ MonoBehaviour:
   GameObjGroup: {fileID: 199760419}
   displayText: {fileID: 28542417}
   textLines:
-    gridSize: {x: 4, y: 4}
+    gridSize: {x: 4, y: 7}
     cellSize: {x: 64, y: 16}
     cells:
     - row:
       - ^You should head back to the lab.
-      - I'm gonna check on the ship.
-      - Anything in the security room?
-      - Sure thing
+      - Going Home.
+      - Checking up on the garage.
+      - You got any games on the computer down there?
     - row:
-      - '@Ok, if that thing is sealed properly then sure go ahead.'
-      - Thanks
-      - 
-      - 
-    - row:
-      - '@That''s also off limits'
+      - '@Nope. Can''t let you do that.'
       - ...
       - 
       - 
     - row:
+      - '@Doc''s asked to keep the door locked. '
+      - Can you open it?
       - 
       - 
+    - row:
+      - '#You''re not allowed in the security room bud.'
+      - There's cake downstairs.
+      - So do you?
+      - 
+    - row:
+      - '@No.'
+      - ...
+      - 
+      - 
+    - row:
+      - '@Only other way would be down in the security room but you''re not allowed
+        in there.'
+      - What if there's cake down in the lab?
+      - 
+      - 
+    - row:
+      - '@Sure, just make sure he knows I didn''t let you.'
+      - Thanks
       - 
       - 
   susValues:
-    gridSize: {x: 3, y: 4}
+    gridSize: {x: 3, y: 7}
     cellSize: {x: 32, y: 16}
     cells:
-    - row: 050000000a00000000000000
+    - row: 0f000000050000000a000000
+    - row: 000000000000000000000000
+    - row: 000000000000000000000000
+    - row: 000000000500000000000000
     - row: 000000000000000000000000
     - row: 000000000000000000000000
     - row: 000000000000000000000000
   buttonIndexing:
-    gridSize: {x: 3, y: 4}
+    gridSize: {x: 3, y: 7}
     cellSize: {x: 32, y: 16}
     cells:
-    - row: 010000000200000004000000
-    - row: 040000000000000000000000
-    - row: 040000000000000000000000
-    - row: 000000000000000000000000
+    - row: 010000000200000003000000
+    - row: 070000000000000000000000
+    - row: 050000000000000000000000
+    - row: 060000000400000000000000
+    - row: 070000000000000000000000
+    - row: 060000000000000000000000
+    - row: 070000000000000000000000
   index: 0
   sus: 0
   ButtonA: {fileID: 411425190}
@@ -21860,7 +21882,7 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   textOptions: 0
-  textLinesNum: 4
+  textLinesNum: 7
   textIsDone: 0
   isTalking: 0
   pressCUIOn: 0
@@ -26719,18 +26741,34 @@ MonoBehaviour:
   GameObjGroup: {fileID: 233924460}
   displayText: {fileID: 380672287}
   textLines:
-    gridSize: {x: 4, y: 4}
+    gridSize: {x: 4, y: 7}
     cellSize: {x: 64, y: 16}
     cells:
     - row:
-      - '#What are you doing here?'
-      - What's that other there?
+      - '#What do you want?'
+      - Just checking up on you.
       - Amogus
       - 
     - row:
-      - '@Oh. Those test tubes over there were gathered from the alien thing. I think
-        they might be able to melt metal.'
+      - '#Oh, I guess that''s fine.'
+      - What's that other there?
+      - How many bones do you have today?
+      - 
+    - row:
+      - '@Oh. Those test tubes over there are filled with some liquid we gathered
+        from the alien thing. I think they might be able to melt metal.'
       - Oh, that's good to know.
+      - 
+      - 
+    - row:
+      - '@Yeah, don''t think it''ll be enough to melt the the entire door but enough
+        for maybe a car to run through it.'
+      - That's also good to know.
+      - 
+      - 
+    - row:
+      - '@Anyways, I''ll be here if you need me.'
+      - Ok.
       - 
       - 
     - row:
@@ -26739,26 +26777,32 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - 
-      - 
-      - 
+      - '#What are you doing here? I thought the door was locked.'
+      - Just checking up on you.
+      - Amogus
       - 
   susValues:
-    gridSize: {x: 3, y: 4}
+    gridSize: {x: 3, y: 7}
     cellSize: {x: 32, y: 16}
     cells:
+    - row: 000000000f00000000000000
     - row: 000000000f00000000000000
     - row: 000000000000000000000000
     - row: 000000000000000000000000
     - row: 000000000000000000000000
+    - row: 000000000000000000000000
+    - row: 000000000f00000000000000
   buttonIndexing:
-    gridSize: {x: 3, y: 4}
+    gridSize: {x: 3, y: 7}
     cellSize: {x: 32, y: 16}
     cells:
-    - row: 010000000200000000000000
-    - row: 030000000000000000000000
+    - row: 010000000500000000000000
+    - row: 020000000500000000000000
     - row: 030000000000000000000000
     - row: 040000000000000000000000
+    - row: 070000000000000000000000
+    - row: 070000000000000000000000
+    - row: 010000000500000000000000
   index: 0
   sus: 0
   ButtonA: {fileID: 2116359925}
@@ -26770,7 +26814,7 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   textOptions: 0
-  textLinesNum: 3
+  textLinesNum: 7
   textIsDone: 0
   isTalking: 0
   pressCUIOn: 0
