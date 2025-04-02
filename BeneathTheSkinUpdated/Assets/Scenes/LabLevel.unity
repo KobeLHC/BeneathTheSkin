@@ -2623,13 +2623,14 @@ MonoBehaviour:
     cellSize: {x: 64, y: 16}
     cells:
     - row:
-      - '@Thanks'
+      - '@Did you know that the little alien thing can transform into us. I think
+        it does it by pressing ''c.'''
       - ...
       - 
       - 
     - row:
-      - '@There should be toilet paper by the sink.'
-      - ...
+      - 
+      - 
       - 
       - 
     - row:
@@ -2655,10 +2656,10 @@ MonoBehaviour:
     cellSize: {x: 32, y: 16}
     cells:
     - row: 040000000000000000000000
-    - row: 040000000000000000000000
     - row: 000000000000000000000000
     - row: 000000000000000000000000
-  index: 1
+    - row: 000000000000000000000000
+  index: 0
   sus: 0
   ButtonA: {fileID: 156307733}
   ButtonAText: {fileID: 1743748376}
