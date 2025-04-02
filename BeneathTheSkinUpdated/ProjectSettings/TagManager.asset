@@ -14,6 +14,7 @@ TagManager:
   - Selectable
   - Bulletin
   - Cam
+  - Footage
   layers:
   - Default
   - TransparentFX

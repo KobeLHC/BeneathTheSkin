@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 50234133}
   - component: {fileID: 50234132}
   m_Layer: 0
-  m_Name: Restart Manager
+  m_Name: Next Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0.5
+  - 0.3
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -540,7 +540,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 448.36}
+  m_SizeDelta: {x: 800, y: 472.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344634724
 MonoBehaviour:
@@ -766,6 +766,7 @@ PlayableDirector:
   m_SceneBindings: []
   m_ExposedReferences:
     m_References:
+    - 0a583f07ee2c343df853a7d46c118955: {fileID: 50234131}
     - fb525867f04024612a4dd27a8291a8ee: {fileID: 0}
     - a7e3f7b24daa74ed2bb1d8b439d70917: {fileID: 497597773}
     - aed478007cf9a4407bd8fc8b61753940: {fileID: 0}

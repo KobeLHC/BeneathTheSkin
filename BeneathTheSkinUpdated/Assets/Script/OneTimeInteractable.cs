@@ -6,7 +6,7 @@ public class OneTimeInteractable : MonoBehaviour
 {
     public GameObject oneTimeInteractPrompt;
     private bool playerIsNear = false;
-    private bool oneTimeUse = true;
+    //private bool oneTimeUse = true;
     public GameObject destroyedObject;
     public bool tpDone;
 

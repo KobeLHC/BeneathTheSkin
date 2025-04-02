@@ -35,17 +35,17 @@ public class MeterController : MonoBehaviour
             spriteRenderer.sprite = startSus;
         }
 
-        else if (playerObject.susLevel > 0 && playerObject.susLevel < 10)
+        else if (playerObject.susLevel > 0 && playerObject.susLevel <= 35)
         {
             spriteRenderer.sprite = lowSus;
         }
 
-        else if (playerObject.susLevel >= 10 && playerObject.susLevel < 25)
+        else if (playerObject.susLevel > 35 && playerObject.susLevel <= 60)
         {
             spriteRenderer.sprite = midSus;
         }
 
-        else if (playerObject.susLevel >= 25 && playerObject.susLevel <= 40)
+        else if (playerObject.susLevel > 60 && playerObject.susLevel <= 99)
         {
             spriteRenderer.sprite = highSus;
         }

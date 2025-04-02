@@ -31,6 +31,9 @@ public class FlavourText : MonoBehaviour
     public OneTimeInteractable tpCondition;
     public bool tpDone;
 
+    public EnterPasswordSystem passObject;
+    public string randomPass;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,15 @@ public class FlavourText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (passObject == null)
+        {
+            //Do nothing
+        }
+        else
+        {
+            randomPass = passObject.correctPassword;
+        }
+
         if(gameObject.tag == "tp")
         {
             tpDone = tpCondition.tpDone;
@@ -94,7 +106,16 @@ public class FlavourText : MonoBehaviour
     {
         foreach (char letter in dialogue[index].ToCharArray())
         {
-            displayText.text += letter;
+            if(gameObject.tag == "Footage")
+            {
+                displayText.text = "There's a sticky note in the trash bin. It has \"" + randomPass + "\" written down on it.";
+                ButtonAText.text = "Continue";
+                ButtonA.SetActive(true);
+            }
+            else
+            {
+                displayText.text += letter;
+            }
             yield return new WaitForSeconds(wordSpeed);
         }
     }
