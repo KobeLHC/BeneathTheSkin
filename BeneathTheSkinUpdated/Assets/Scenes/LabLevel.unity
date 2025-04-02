@@ -1438,6 +1438,7 @@ GameObject:
   - component: {fileID: 84133892}
   - component: {fileID: 84133895}
   - component: {fileID: 84133894}
+  - component: {fileID: 84133896}
   m_Layer: 0
   m_Name: computer
   m_TagString: Selectable
@@ -1573,6 +1574,31 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: a704acc1c942f4163a0fec9895aeb53b, type: 3}
   interactSprite: {fileID: 21300000, guid: 582e7dc39409a4f33a85377b27dc1d0d, type: 3}
   board: {fileID: 0}
+--- !u!114 &84133896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84133891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - I WANT TO GO HOME
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &100188932
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,7 +7448,7 @@ Transform:
   m_GameObject: {fileID: 428892985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.57, y: -2.67, z: -10.1}
+  m_LocalPosition: {x: 15.29, y: 14.4, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8089,6 +8115,7 @@ GameObject:
   - component: {fileID: 458919510}
   - component: {fileID: 458919513}
   - component: {fileID: 458919514}
+  - component: {fileID: 458919515}
   m_Layer: 0
   m_Name: Break Room Door
   m_TagString: Untagged
@@ -8269,6 +8296,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0748051}
   m_EdgeRadius: 0
+--- !u!114 &458919515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458919509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - NOT OPEN YET
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &462150274
 GameObject:
   m_ObjectHideFlags: 0
@@ -9454,7 +9506,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.453747, y: -2.6697602, z: -10.1}
+  m_LocalPosition: {x: 15.29, y: 14.4, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24002,6 +24054,7 @@ GameObject:
   - component: {fileID: 1561641713}
   - component: {fileID: 1561641716}
   - component: {fileID: 1561641715}
+  - component: {fileID: 1561641717}
   m_Layer: 0
   m_Name: amogusShip
   m_TagString: Selectable
@@ -24137,6 +24190,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5855606, y: 1.0229692}
   m_EdgeRadius: 0
+--- !u!114 &1561641717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561641712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0970b0ccc754f4d976a2704b59762a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2039526035}
+  TextPanel: {fileID: 2080334063}
+  GameObjGroup: {fileID: 1529630687}
+  displayText: {fileID: 105187262}
+  dialogue:
+  - AMONG US BLAST OFF
+  ButtonA: {fileID: 2011042879}
+  ButtonAText: {fileID: 1724578553}
+  wordSpeed: 0.001
+  playerIsClose: 0
+  isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &1564429465
 GameObject:
   m_ObjectHideFlags: 0
@@ -31620,7 +31698,7 @@ Transform:
   m_GameObject: {fileID: 2039526034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.57, y: -2.67, z: -0.1}
+  m_LocalPosition: {x: 15.29, y: 14.4, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
