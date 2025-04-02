@@ -8,6 +8,7 @@ public class OneTimeInteractable : MonoBehaviour
     private bool playerIsNear = false;
     private bool oneTimeUse = true;
     public GameObject destroyedObject;
+    public bool tpDone;
 
     //Sound Effect
     AudioManager audioManager;
@@ -26,6 +27,7 @@ public class OneTimeInteractable : MonoBehaviour
     {
         oneTimeInteractPrompt.SetActive(false);
         spriteRenderer = GetComponent<SpriteRenderer>();
+        tpDone = false;
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class OneTimeInteractable : MonoBehaviour
         {
             if(destroyedObject.tag == "tp")
             {
+                tpDone = true;
                 Destroy(destroyedObject);
             }
 
@@ -49,7 +52,7 @@ public class OneTimeInteractable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(destroyedObject == null)
+            if (destroyedObject == null)
             {
                 oneTimeInteractPrompt.SetActive(false);
             }

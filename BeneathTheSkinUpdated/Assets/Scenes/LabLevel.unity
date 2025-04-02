@@ -594,6 +594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneTimeInteractPrompt: {fileID: 1828001857}
   destroyedObject: {fileID: 33582286}
+  tpDone: 0
   basicSprite: {fileID: 21300000, guid: 965d39dbae1844e4fb10de35d860b909, type: 3}
   interactSprite: {fileID: 21300000, guid: d9ccdf43e20224825a21a1659ca8c928, type: 3}
 --- !u!61 &33582292
@@ -1571,7 +1572,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: a704acc1c942f4163a0fec9895aeb53b, type: 3}
   interactSprite: {fileID: 21300000, guid: 582e7dc39409a4f33a85377b27dc1d0d, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!1 &100188932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,7 +2569,6 @@ GameObject:
   - component: {fileID: 156566856}
   - component: {fileID: 156566855}
   - component: {fileID: 156566854}
-  - component: {fileID: 156566859}
   m_Layer: 0
   m_Name: Jerry
   m_TagString: Sci
@@ -2760,18 +2760,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 260393912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &156566859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156566853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8698f5e6f54b7ba6218967d7b35ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &175691997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,7 +3691,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 52c408238a4b04c18a1afff3c3c76b5a, type: 3}
   interactSprite: {fileID: 21300000, guid: 62c97be0ac7df40e799bd4bd3a4f6d7d, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!114 &209818041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3727,6 +3715,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &233924460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,7 +3772,7 @@ GameObject:
   - component: {fileID: 242174049}
   m_Layer: 0
   m_Name: TP flavour text
-  m_TagString: Untagged
+  m_TagString: tp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3922,6 +3912,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 33582291}
+  tpDone: 0
 --- !u!1 &245218447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,7 +4185,7 @@ GameObject:
   - component: {fileID: 255582322}
   m_Layer: 0
   m_Name: PasswordZone
-  m_TagString: Untagged
+  m_TagString: Cam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7053,7 +7045,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 3a9abcd6dec0144739ea38a2830ad572, type: 3}
   interactSprite: {fileID: 21300000, guid: 5561380104dc84980b0461621142899f, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!114 &411266101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7079,6 +7071,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &411425190
 GameObject:
   m_ObjectHideFlags: 0
@@ -7428,7 +7422,7 @@ Transform:
   m_GameObject: {fileID: 428892985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.21, y: -2.99, z: -10.1}
+  m_LocalPosition: {x: -17.57, y: -2.67, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8229,7 +8223,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 1182986624}
   basicSprite: {fileID: 21300000, guid: a2ea466052c6b4ac485e9bc6487a8832, type: 3}
   interactSprite: {fileID: 21300000, guid: 11eb0a49392734c738d693fa711b629c, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!61 &458919514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9460,7 +9454,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.400211, y: -2.9897802, z: -10.1}
+  m_LocalPosition: {x: -14.718015, y: -2.6697602, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10337,7 +10331,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: b001fef62ef164deea366293962dbe65, type: 3}
   interactSprite: {fileID: 21300000, guid: fe50a285748684545802922eac8e2e8a, type: 3}
-  specialObject: {fileID: 1116250517}
+  board: {fileID: 1116250517}
 --- !u!61 &592107703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10408,6 +10402,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &593138485
 GameObject:
   m_ObjectHideFlags: 0
@@ -15451,7 +15447,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 6f770533142ea4ab6accacd18fc97951, type: 3}
   interactSprite: {fileID: 21300000, guid: 6dd607ccb2bb243f5a8799139df0a50c, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!61 &952760681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15522,6 +15518,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &953730507
 GameObject:
   m_ObjectHideFlags: 0
@@ -15755,7 +15753,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 2e0cbb8f8e3d3426a94fda4703301139, type: 3}
   interactSprite: {fileID: 21300000, guid: 5695426b9e7a749b1aca166398aa4741, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!61 &957377506
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15891,6 +15889,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &960423316
 GameObject:
   m_ObjectHideFlags: 0
@@ -18219,13 +18219,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112313483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab53edf58c5d45f0ad63dd4c355a513, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a36f2a578a724e468219e171975cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactPrompt: {fileID: 467626695}
+  oneTimeInteractPrompt: {fileID: 1828001857}
+  destroyedObject: {fileID: 255582321}
+  tpDone: 0
   basicSprite: {fileID: 21300000, guid: c9935f5898a5f4bf4942a4e8e99eee9e, type: 3}
   interactSprite: {fileID: 21300000, guid: 6266b4a1136704ee6a36abb6919ced39, type: 3}
-  specialObject: {fileID: 0}
 --- !u!1 &1115060110
 GameObject:
   m_ObjectHideFlags: 0
@@ -18444,7 +18445,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 78eab9ae749a342e2a5ac626cda9a4d8, type: 3}
   interactSprite: {fileID: 21300000, guid: 4cb4317feb3714166a53c2b3b5064e14, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!114 &1132308347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18473,6 +18474,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &1137618091
 GameObject:
   m_ObjectHideFlags: 0
@@ -23156,7 +23159,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: adc76df65db1649528f200e514dbae1f, type: 3}
   interactSprite: {fileID: 21300000, guid: 294836cfd8bb646caa470d28338a0459, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!61 &1495825251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23226,6 +23229,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &1502138859
 GameObject:
   m_ObjectHideFlags: 0
@@ -24064,7 +24069,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 1ce1ab7534ba34b63831549d759d90d6, type: 3}
   interactSprite: {fileID: 21300000, guid: 777f26eaac45a404fb55721b07e0ca9d, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!61 &1561641716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25303,7 +25308,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 2adf2dd518409496b98d9349165cb73c, type: 3}
   interactSprite: {fileID: 21300000, guid: de2692449f80747c59a981c5214564c4, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!114 &1660658072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25329,6 +25334,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &1675906316
 GameObject:
   m_ObjectHideFlags: 0
@@ -27253,6 +27260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneTimeInteractPrompt: {fileID: 1828001857}
   destroyedObject: {fileID: 1800040976}
+  tpDone: 0
   basicSprite: {fileID: 21300000, guid: 34f6d048ef286400aa8c45bc3e9589de, type: 3}
   interactSprite: {fileID: 21300000, guid: 921f75afd70cf4db58cc43d46da8f2c0, type: 3}
 --- !u!61 &1800040980
@@ -27819,7 +27827,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: dd49bf2fee96944c49d6d49167e7e799, type: 3}
   interactSprite: {fileID: 21300000, guid: b204018109660438d9ee648b1adfdf5f, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!114 &1837417601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27843,6 +27851,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &1837489826
 GameObject:
   m_ObjectHideFlags: 0
@@ -27945,7 +27955,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: 17d44ea0d52a34f41805e15fa29fdc2b, type: 3}
   interactSprite: {fileID: 21300000, guid: e5c8fa58d5d18409580b97adb686449a, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!61 &1837489830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28014,6 +28024,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &1838393807
 GameObject:
   m_ObjectHideFlags: 0
@@ -29458,6 +29470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneTimeInteractPrompt: {fileID: 1828001857}
   destroyedObject: {fileID: 456186798}
+  tpDone: 0
   basicSprite: {fileID: 21300000, guid: f5d4f1f4689a348f9a275145f93f3f40, type: 3}
   interactSprite: {fileID: 21300000, guid: d24bdd2f05b394991855502021c61001, type: 3}
 --- !u!1 &1924047652
@@ -30664,7 +30677,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 467626695}
   basicSprite: {fileID: 21300000, guid: a2c31b0736c4d43bab9aedc4eb69a64a, type: 3}
   interactSprite: {fileID: 21300000, guid: 9047b58b97dfd4545a3a7b1862338583, type: 3}
-  specialObject: {fileID: 0}
+  board: {fileID: 0}
 --- !u!61 &1994925725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30801,6 +30814,8 @@ MonoBehaviour:
   wordSpeed: 0.001
   playerIsClose: 0
   isTriggered: 0
+  tpCondition: {fileID: 0}
+  tpDone: 0
 --- !u!1 &2001987009
 GameObject:
   m_ObjectHideFlags: 0
@@ -31561,7 +31576,7 @@ Transform:
   m_GameObject: {fileID: 2039526034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.21, y: -2.99, z: -0.1}
+  m_LocalPosition: {x: -17.57, y: -2.67, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

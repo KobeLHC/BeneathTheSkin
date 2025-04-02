@@ -28,15 +28,28 @@ public class FlavourText : MonoBehaviour
     public bool playerIsClose = false;
     public bool isTriggered = false;
 
+    public OneTimeInteractable tpCondition;
+    public bool tpDone;
+
     // Start is called before the first frame update
     void Start()
     {
         //AButton.onClick.AddListener(NextLine); // Attach function to button
+        tpDone = false;
+        if(tpCondition == null)
+        {
+            //Do nothing
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(gameObject.tag == "tp")
+        {
+            tpDone = tpCondition.tpDone;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && playerIsClose)
         {
             ButtonA.SetActive(false);
@@ -118,6 +131,11 @@ public class FlavourText : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if(gameObject.tag == "tp" && tpDone)
+            {
+                Destroy(gameObject);
+            }
+
             playerIsClose = false;
             zeroText();
         }

@@ -67,6 +67,11 @@ public class EnterPasswordSystem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInZone = false;
+
+            if (finishedPuzzle)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

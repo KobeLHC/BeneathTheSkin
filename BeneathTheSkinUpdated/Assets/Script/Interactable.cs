@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
     AudioManager audioManager;
 
     //Special Object
-    public GameObject specialObject;
+    public GameObject board;
 
     private void Awake()
     {
@@ -28,14 +28,14 @@ public class Interactable : MonoBehaviour
         interactPrompt.SetActive(false);
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        if(specialObject == null)
+        if(board == null)
         {
             // Do nothing
         }
 
         else
         {
-            specialObject.SetActive(false);
+            board.SetActive(false);
         }
         
     }
@@ -51,7 +51,7 @@ public class Interactable : MonoBehaviour
 
             if(gameObject.tag == "Bulletin")
             {
-                specialObject.SetActive(true);
+                board.SetActive(true);
             }
         }
     }
@@ -78,7 +78,7 @@ public class Interactable : MonoBehaviour
 
             if(gameObject.tag == "Bulletin")
             {
-                specialObject.SetActive(false);
+                board.SetActive(false);
             }
         }
     }
