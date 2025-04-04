@@ -1575,6 +1575,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: a704acc1c942f4163a0fec9895aeb53b, type: 3}
   interactSprite: {fileID: 21300000, guid: 582e7dc39409a4f33a85377b27dc1d0d, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!114 &84133896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,6 +3799,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 52c408238a4b04c18a1afff3c3c76b5a, type: 3}
   interactSprite: {fileID: 21300000, guid: 62c97be0ac7df40e799bd4bd3a4f6d7d, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!114 &209818041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7292,6 +7294,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 3a9abcd6dec0144739ea38a2830ad572, type: 3}
   interactSprite: {fileID: 21300000, guid: 5561380104dc84980b0461621142899f, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!114 &411266101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8473,6 +8476,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: a2ea466052c6b4ac485e9bc6487a8832, type: 3}
   interactSprite: {fileID: 21300000, guid: 11eb0a49392734c738d693fa711b629c, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &458919514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9730,7 +9734,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.453691, y: -2.87979, z: -10.1}
+  m_LocalPosition: {x: -14.858177, y: -2.8798, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10608,6 +10612,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: b001fef62ef164deea366293962dbe65, type: 3}
   interactSprite: {fileID: 21300000, guid: fe50a285748684545802922eac8e2e8a, type: 3}
   board: {fileID: 1116250517}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &592107703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15891,6 +15896,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 6f770533142ea4ab6accacd18fc97951, type: 3}
   interactSprite: {fileID: 21300000, guid: 6dd607ccb2bb243f5a8799139df0a50c, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &952760681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16199,6 +16205,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 2e0cbb8f8e3d3426a94fda4703301139, type: 3}
   interactSprite: {fileID: 21300000, guid: 5695426b9e7a749b1aca166398aa4741, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &957377506
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16371,6 +16378,7 @@ RectTransform:
   - {fileID: 391915544}
   - {fileID: 2060415371}
   - {fileID: 812659151}
+  - {fileID: 1662433427}
   m_Father: {fileID: 1490473186}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -18896,6 +18904,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 78eab9ae749a342e2a5ac626cda9a4d8, type: 3}
   interactSprite: {fileID: 21300000, guid: 4cb4317feb3714166a53c2b3b5064e14, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!114 &1132308347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20603,7 +20612,7 @@ GameObject:
   - component: {fileID: 1253381172}
   - component: {fileID: 1253381171}
   m_Layer: 5
-  m_Name: 'Correct Password Prompt '
+  m_Name: 'Hint Prompt '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20648,7 +20657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Correct Password
+  m_text: 'Gate Door Unlocked
 
 '
   m_isRightToLeft: 0
@@ -22264,7 +22273,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 546514216, guid: 1952a887876c74e88bb6667540f8d0d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -23566,10 +23575,9 @@ RectTransform:
   - {fileID: 1828001860}
   - {fileID: 1220613981}
   - {fileID: 1711261807}
-  - {fileID: 1253381170}
   - {fileID: 799788360}
+  - {fileID: 1253381170}
   - {fileID: 960423317}
-  - {fileID: 1662433427}
   - {fileID: 1725579430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23773,6 +23781,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: adc76df65db1649528f200e514dbae1f, type: 3}
   interactSprite: {fileID: 21300000, guid: 294836cfd8bb646caa470d28338a0459, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &1495825251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24686,6 +24695,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 1ce1ab7534ba34b63831549d759d90d6, type: 3}
   interactSprite: {fileID: 21300000, guid: 777f26eaac45a404fb55721b07e0ca9d, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &1561641716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25457,81 +25467,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626290185}
   m_CullTransparentMesh: 1
---- !u!1 &1630321689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1630321690}
-  - component: {fileID: 1630321692}
-  - component: {fileID: 1630321691}
-  m_Layer: 5
-  m_Name: Pause Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1630321690
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630321689}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1662433427}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: 0.00040436}
-  m_SizeDelta: {x: 800, y: 453.68}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1630321691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630321689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 54a205ec8a3694fb39172d58ba523165, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1630321692
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630321689}
-  m_CullTransparentMesh: 1
 --- !u!1 &1647815869
 GameObject:
   m_ObjectHideFlags: 0
@@ -26027,6 +25962,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 2adf2dd518409496b98d9349165cb73c, type: 3}
   interactSprite: {fileID: 21300000, guid: de2692449f80747c59a981c5214564c4, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!114 &1660658072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26066,6 +26002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1662433427}
   - component: {fileID: 1662433428}
+  - component: {fileID: 1662433429}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -26082,14 +26019,13 @@ RectTransform:
   m_GameObject: {fileID: 1662433426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7857141, y: 1.5872995, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1630321690}
   - {fileID: 207766338}
   - {fileID: 311230951}
   - {fileID: 2055684806}
-  m_Father: {fileID: 1490473186}
+  m_Father: {fileID: 960423317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -26104,6 +26040,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662433426}
   m_CullTransparentMesh: 1
+--- !u!114 &1662433429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662433426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54a205ec8a3694fb39172d58ba523165, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1675906316
 GameObject:
   m_ObjectHideFlags: 0
@@ -28888,6 +28854,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: dd49bf2fee96944c49d6d49167e7e799, type: 3}
   interactSprite: {fileID: 21300000, guid: b204018109660438d9ee648b1adfdf5f, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!114 &1837417601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29018,6 +28985,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: 17d44ea0d52a34f41805e15fa29fdc2b, type: 3}
   interactSprite: {fileID: 21300000, guid: e5c8fa58d5d18409580b97adb686449a, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &1837489830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30802,6 +30770,9 @@ MonoBehaviour:
   screenshotPanel: {fileID: 1725579429}
   screenshotImage: {fileID: 1466144039}
   deleteButton: {fileID: 1348283129}
+  hintPrompt: {fileID: 1253381169}
+  activate: 0.5
+  deactivate: 3.5
 --- !u!4 &1933909139
 Transform:
   m_ObjectHideFlags: 0
@@ -31742,6 +31713,7 @@ MonoBehaviour:
   basicSprite: {fileID: 21300000, guid: a2c31b0736c4d43bab9aedc4eb69a64a, type: 3}
   interactSprite: {fileID: 21300000, guid: 9047b58b97dfd4545a3a7b1862338583, type: 3}
   board: {fileID: 0}
+  hintPrompt: {fileID: 1253381169}
 --- !u!61 &1994925725
 BoxCollider2D:
   m_ObjectHideFlags: 0
