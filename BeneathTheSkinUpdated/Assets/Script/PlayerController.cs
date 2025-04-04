@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         moveLeft = false;
         moveRight = false;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             moveUp = true;
             moveDown = false;
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Up");
         }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             moveUp = false;
             moveDown = false;
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Left");
         }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             moveUp = false;
             moveDown = true;
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Down");
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             moveUp = false;
             moveDown = false;
