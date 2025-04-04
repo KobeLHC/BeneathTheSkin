@@ -17,4 +17,9 @@ public class TitleScreen : MonoBehaviour
     {
         SceneManager.LoadScene("LabLevel");
     }
+
+    public void creditScene()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }

@@ -26,6 +26,10 @@ public class EndSceneController : MonoBehaviour
     //Output to final gate script
     public bool solved;
 
+    //Pause Menu
+    public GameObject pauseMenu;
+    public bool pauseOn;
+
     void Start()
     {
         //Getting component at start
@@ -34,6 +38,8 @@ public class EndSceneController : MonoBehaviour
         chemicalObject = chemicalPuzzle.GetComponent<LevelCode>();
         playerObject = player.GetComponent<PlayerController>();
         solved = false;
+        pauseMenu.SetActive(false);
+        pauseOn = false;
     }
 
     void Update()
@@ -44,8 +50,23 @@ public class EndSceneController : MonoBehaviour
         chemicalDone = chemicalObject.getCondition();
         playerLose = playerObject.susLevel;
 
+        //press esc to activate pause menu
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseOn)
+        {
+            pauseMenu.SetActive(true);
+            pauseOn = true;
+            Time.timeScale = 0f;
+        }
+
+       else if (Input.GetKeyDown(KeyCode.Escape) && pauseOn)
+        {
+            pauseMenu.SetActive(false);
+            pauseOn = false;
+            Time.timeScale = 1f;
+        }
+
         //if all puzzle solved then send true to final gate script
-        if(cardDone && passwordDone && chemicalDone)
+        if (cardDone && passwordDone && chemicalDone)
         {
             solved = true;
         }       
