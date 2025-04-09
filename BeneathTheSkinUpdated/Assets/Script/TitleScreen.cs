@@ -22,4 +22,9 @@ public class TitleScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+
+    public void titleScene()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
 }

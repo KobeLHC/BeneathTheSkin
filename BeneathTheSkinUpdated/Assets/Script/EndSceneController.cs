@@ -55,14 +55,14 @@ public class EndSceneController : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             pauseOn = true;
-            Time.timeScale = 0f;
+            playerObject.changeRunSpeed(0.0f);
         }
 
        else if (Input.GetKeyDown(KeyCode.Escape) && pauseOn)
         {
             pauseMenu.SetActive(false);
             pauseOn = false;
-            Time.timeScale = 1f;
+            playerObject.changeRunSpeed(6.0f);
         }
 
         //if all puzzle solved then send true to final gate script
